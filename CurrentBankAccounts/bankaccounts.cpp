@@ -25,6 +25,15 @@ void trim(string &s)
 }
 
 // ---------------------------------------
+// Default Constructor
+CurrentBankAccounts::CurrentBankAccounts() {}
+
+CurrentBankAccounts::CurrentBankAccounts(string fileName)
+{
+    this->fileName = fileName;
+}
+
+// ---------------------------------------
 // Add new account to file
 void CurrentBankAccounts::CreateAccount(BankAccount acc)
 {

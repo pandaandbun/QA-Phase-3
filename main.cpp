@@ -121,170 +121,181 @@ void TransactionLogout(BankAccountTransaction trans)
 }
 
 // -----------------------------------------
-int main()
+int main(int argc, char **argv)
 {
-    // Logged In
-    Login session;
-
-    // Call login method here and return value for isLoggedIn
-    if (session.RunLogin())
+    if (argc >= 3)
     {
-        // Save current user info
-        User user = session.saveUserInfo();
+        // File names
+        string curretBankAccountFileName = argv[1];
+        string transactionFileName = argv[2];
 
-        // Load Current Bank Acccounts
-        CurrentBankAccounts accs;
-        accs.LoadBankAccounts();
+        // Logged In
+        Login session;
 
-        // Transaction
-        BankAccountTransaction sessionTransactions;
-
-        // Selection Screen
-        while (1)
+        // Call login method here and return value for isLoggedIn
+        if (session.RunLogin())
         {
+            // Save current user info
+            User user = session.saveUserInfo();
+
+            // Load Current Bank Acccounts
+            CurrentBankAccounts accs(curretBankAccountFileName);
+            accs.LoadBankAccounts();
+
             // Transaction
-            Transaction transaction;
+            BankAccountTransaction sessionTransactions(transactionFileName);
 
-            // Selection for ADMIN
-            if (user.isAdmin)
-            { // Display menu for admin user
-                int menuSelection;
+            // Selection Screen
+            while (1)
+            {
+                // Transaction
+                Transaction transaction;
 
-                cout << endl
-                     << "MAIN MENU (Admin Privleges ON)\n"
-                     << "==============================\n"
-                     << "1. Withdrawl\n"
-                     << "2. Transfer\n"
-                     << "3. Pay Bill\n"
-                     << "4. Deposit\n"
-                     << "5. Create\n"
-                     << "6. Delete\n"
-                     << "7. Disable\n"
-                     << "8. Change Plan\n"
-                     << "0. Logout\n"
-                     << "\n"
-                     << "Enter Selection: ";
+                // Selection for ADMIN
+                if (user.isAdmin)
+                { // Display menu for admin user
+                    int menuSelection;
 
-                cin >> menuSelection;
+                    cout << endl
+                         << "MAIN MENU (Admin Privleges ON)\n"
+                         << "==============================\n"
+                         << "1. Withdrawl\n"
+                         << "2. Transfer\n"
+                         << "3. Pay Bill\n"
+                         << "4. Deposit\n"
+                         << "5. Create\n"
+                         << "6. Delete\n"
+                         << "7. Disable\n"
+                         << "8. Change Plan\n"
+                         << "0. Logout\n"
+                         << "\n"
+                         << "Enter Selection: ";
 
-                // Withdrawal
-                if (menuSelection == 1)
-                {
-                    transaction = TransactionWithdraw(accs, user);
+                    cin >> menuSelection;
+
+                    // Withdrawal
+                    if (menuSelection == 1)
+                    {
+                        transaction = TransactionWithdraw(accs, user);
+                    }
+
+                    // Transfer
+                    else if (menuSelection == 2)
+                    {
+                        transaction = TransactionTransfer(accs, user);
+                    }
+
+                    // Paybill
+                    else if (menuSelection == 3)
+                    {
+                        transaction = TransactionPayBill(accs, user);
+                    }
+
+                    // Deposit
+                    else if (menuSelection == 4)
+                    {
+                        transaction = TransactionDeposit(accs, user);
+                    }
+
+                    // Create
+                    else if (menuSelection == 5)
+                    {
+                        transaction = TransactionCreate(accs, user);
+                    }
+
+                    // Delete
+                    else if (menuSelection == 6)
+                    {
+                        transaction = TransactionDelete(accs, user);
+                    }
+
+                    // Disab;e
+                    else if (menuSelection == 7)
+                    {
+                        transaction = TransactionDisable(accs, user);
+                    }
+
+                    // Change Plan
+                    else if (menuSelection == 8)
+                    {
+                        transaction = TransactionChangePlan(accs, user);
+                    }
+
+                    // Logout
+                    else if (menuSelection == 0)
+                    {
+                        TransactionLogout(sessionTransactions);
+                    }
+                    else
+                    {
+                        cout << "Command not recognized" << endl;
+                    }
                 }
 
-                // Transfer
-                else if (menuSelection == 2)
-                {
-                    transaction = TransactionTransfer(accs, user);
-                }
-
-                // Paybill
-                else if (menuSelection == 3)
-                {
-                    transaction = TransactionPayBill(accs, user);
-                }
-
-                // Deposit
-                else if (menuSelection == 4)
-                {
-                    transaction = TransactionDeposit(accs, user);
-                }
-
-                // Create
-                else if (menuSelection == 5)
-                {
-                    transaction = TransactionCreate(accs, user);
-                }
-
-                // Delete
-                else if (menuSelection == 6)
-                {
-                    transaction = TransactionDelete(accs, user);
-                }
-
-                // Disab;e
-                else if (menuSelection == 7)
-                {
-                    transaction = TransactionDisable(accs, user);
-                }
-
-                // Change Plan
-                else if (menuSelection == 8)
-                {
-                    transaction = TransactionChangePlan(accs, user);
-                }
-
-                // Logout
-                else if (menuSelection == 0)
-                {
-                    TransactionLogout(sessionTransactions);
-                }
+                // Selection for STANDARD
                 else
                 {
-                    cout << "Command not recognized" << endl;
+                    // Display menu for standard user
+                    int menuSelection;
+
+                    cout << endl
+                         << "MAIN MENU\n"
+                         << "===========\n"
+                         << "1. Withdrawl\n"
+                         << "2. Transfer\n"
+                         << "3. Pay Bill\n"
+                         << "4. Deposit\n"
+                         << "0. Logout\n"
+                         << "\n"
+                         << "Enter Selection: ";
+
+                    cin >> menuSelection;
+
+                    // Withdrawal
+                    if (menuSelection == 1)
+                    {
+                        transaction = TransactionWithdraw(accs, user);
+                    }
+
+                    // Transfer
+                    else if (menuSelection == 2)
+                    {
+                        transaction = TransactionTransfer(accs, user);
+                    }
+
+                    // Paybill
+                    else if (menuSelection == 3)
+                    {
+                        transaction = TransactionPayBill(accs, user);
+                    }
+
+                    // Deposit
+                    else if (menuSelection == 4)
+                    {
+                        transaction = TransactionDeposit(accs, user);
+                    }
+
+                    // Logout
+                    else if (menuSelection == 0)
+                    {
+                        TransactionLogout(sessionTransactions);
+                    }
+                    else
+                    {
+                        cout << "Command not recognized" << endl;
+                    }
                 }
-            }
 
-            // Selection for STANDARD
-            else
-            {
-                // Display menu for standard user
-                int menuSelection;
-
-                cout << endl
-                     << "MAIN MENU\n"
-                     << "===========\n"
-                     << "1. Withdrawl\n"
-                     << "2. Transfer\n"
-                     << "3. Pay Bill\n"
-                     << "4. Deposit\n"
-                     << "0. Logout\n"
-                     << "\n"
-                     << "Enter Selection: ";
-
-                cin >> menuSelection;
-
-                // Withdrawal
-                if (menuSelection == 1)
+                // Add valid transaction to transaction list
+                if (!transaction.accountHolderName.empty())
                 {
-                    transaction = TransactionWithdraw(accs, user);
+                    sessionTransactions.transactions.push_back(transaction);
                 }
-
-                // Transfer
-                else if (menuSelection == 2)
-                {
-                    transaction = TransactionTransfer(accs, user);
-                }
-
-                // Paybill
-                else if (menuSelection == 3)
-                {
-                    transaction = TransactionPayBill(accs, user);
-                }
-
-                // Deposit
-                else if (menuSelection == 4)
-                {
-                    transaction = TransactionDeposit(accs, user);
-                }
-
-                // Logout
-                else if (menuSelection == 0)
-                {
-                    TransactionLogout(sessionTransactions);
-                }
-                else
-                {
-                    cout << "Command not recognized" << endl;
-                }
-            }
-
-            // Add valid transaction to transaction list
-            if (!transaction.accountHolderName.empty())
-            {
-                sessionTransactions.transactions.push_back(transaction);
             }
         }
+    }
+    else
+    {
+        cout << "Please enter the correct number of arguments" << endl;
     }
 }

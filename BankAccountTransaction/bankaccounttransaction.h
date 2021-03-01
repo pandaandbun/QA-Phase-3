@@ -1,11 +1,8 @@
 #pragma once
 #include <iostream>
 #include <fstream>
-#include <ctime>
 #include <string>
 #include <vector>
-#include <ctime>
-#include <iomanip>
 #include "../CurrentBankAccounts/bankaccounts.h"
 using namespace std;
 
@@ -26,8 +23,14 @@ public:
 // Bank account transaction class is basically a compilation of Transaction instance in a single session
 class BankAccountTransaction
 {
+private:
+    string fileName;
+
 public:
     // Dynamic array
     vector<Transaction> transactions;
+
+    BankAccountTransaction();
+    BankAccountTransaction(string fileName);
     void CreateTransactionFile();
 };

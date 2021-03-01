@@ -3,7 +3,7 @@
 // Default Constructor for Transaction
 Transaction::Transaction(){};
 
-// Constructor for Transaction 
+// Constructor for Transaction
 // Take transaction code, account name, account number, amount of money involved and misc info
 Transaction::Transaction(int transactionCode, string accountHolderName, int bankAccountNumber, float fundsAmount, string miscInfo)
 {
@@ -14,19 +14,21 @@ Transaction::Transaction(int transactionCode, string accountHolderName, int bank
     this->miscInfo = miscInfo;
 }
 
+// -----------------------------------------------
+// Default Constructor
+BankAccountTransaction::BankAccountTransaction() {}
+
+// Constructor
+BankAccountTransaction::BankAccountTransaction(string fileName)
+{
+    this->fileName = fileName;
+}
+
 // Write to file containing the transaction in that session
 void BankAccountTransaction::CreateTransactionFile()
 {
-    // Get current time
-    auto t = time(nullptr);
-    auto tm = *localtime(&t);
-
-    std::ostringstream oss;
-    oss << std::put_time(&tm, "%d-%m-%Y %H-%M-%S");
-    string time = oss.str();
-
     // Set current time as file name
-    ofstream out(time + ".txt");
+    ofstream out(fileName);
 
     // Write to file
     for (int i = 0; i < transactions.size(); i++)

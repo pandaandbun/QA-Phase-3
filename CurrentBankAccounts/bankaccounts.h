@@ -23,11 +23,15 @@ public:
 class CurrentBankAccounts
 {
 private:
-    string fileName = "currentbankaccountfile.txt";
+    // string fileName = "currentbankaccountfile.txt";
+    string fileName;
 
 public:
     // Dynamic array
     vector<BankAccount> accounts;
+
+    CurrentBankAccounts();
+    CurrentBankAccounts(string fileName);
 
     int ReadCurrentBankAccounts();
     int LoadBankAccounts();
