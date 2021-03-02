@@ -1,0 +1,18 @@
+Welcome to the banking system
+Enter session type: (admin / standard)
+Login Accepted!
+Enter Your Name:
+Hi John Smith
+…...Please wait while we load Current Bank Accounts……
+Success! Please have a great time Banking with us
+
+MAIN MENU
+===========
+1. Withdrawl
+2. Transfer
+3. Pay Bill
+4. Deposit
+0. Logout
+
+Enter Selection: 
+Session Terminated
