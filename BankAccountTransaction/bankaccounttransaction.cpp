@@ -46,9 +46,8 @@ void BankAccountTransaction::CreateTransactionFile()
         int padLength = 20 - currTransaction.accountHolderName.size();
         for (int i = 0; i < padLength; i++)
         {
-            paddedAccountHolderName += "_";
+            paddedAccountHolderName += " ";
         }
-        replace(paddedAccountHolderName.begin(), paddedAccountHolderName.end(), ' ', '_');
 
         // Account Balance
         ostringstream ss2;
@@ -61,11 +60,11 @@ void BankAccountTransaction::CreateTransactionFile()
         string paddedTransactionCode = ss3.str();
 
         // Adding new account
-        string newLine = paddedTransactionCode + "_" + paddedAccountHolderName + "_" + paddedAccountNumber + "_" + paddedAccountBalance + "_" + currTransaction.miscInfo;
+        string newLine = paddedTransactionCode + " " + paddedAccountHolderName + " " + paddedAccountNumber + " " + paddedAccountBalance + " " + currTransaction.miscInfo;
 
         out << newLine << endl;
     }
 
     // End of line transaction code
-    out << "00______________________00000_00000.00_00" << endl;
+    out << "00                      00000 00000.00 00" << endl;
 }

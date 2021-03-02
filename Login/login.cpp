@@ -1,5 +1,31 @@
 #include "login.h"
 
+//Comparison function checking if the name string matches a predefined regex for account names
+int User::isValidName(string name)
+{
+    // Check if name is not null or empty string
+    if (name.empty() || name.compare("") == 0)
+    {
+        return 0;
+    }
+
+    // Check if name is at most 20 characters long and at least 1 character long
+    if (name.length() > 20)
+    {
+        return 0;
+    }
+
+    // Check if name does not contain digits or illegal characters
+    regex regexName("[^\\t\\n\\r\\f\\v0-9\\[\\]!@#$%^&*()_+{}|\\:;\"\'<,>.?/~`]+");
+    if (!regex_match(name, regexName))
+    {
+        return 0;
+    }
+
+    return 1;
+}
+
+// ----------------------------------------
 // 0 - Error
 // 1 - Success
 // Central function that runs all login methods
@@ -13,33 +39,42 @@ int Login::RunLogin()
 
     if (!isAdmin)
     {
-        StandardName();
-        cout << "Hi " << accountHolderName << endl;
+        if (StandardName())
+        {
+            // Standard Validated
+            cout << "Hi " << accountHolderName << endl;
+            return 1;
+        }
+
+        cout << "Name not valid" << endl;
+    } else {
+        // Admin Validated
+        return 1;
     }
 
-    return 1;
+    return 0;
 }
 
 // Selecting session where
-// 1 - admin
-// 2 - standard
+// admin
+// standard
 int Login::SelectSession()
 {
-    int type;
+    string type;
 
     cout << "Welcome to the banking system\n";
-    cout << "Enter session type: (admin - 1 / standard - 2)\n";
+    cout << "Enter session type: (admin / standard)\n";
     cin >> type;
 
-    if (type == 1 || type == 2)
+    if (type == "admin" || type == "standard")
     {
         cout << "Login Accepted!\n";
 
-        if (type == 1)
+        if (type == "admin")
         {
             isAdmin = 1;
         }
-        else if (type == 2)
+        else if (type == "standard")
         {
             isAdmin = 0;
         }
@@ -51,10 +86,23 @@ int Login::SelectSession()
 }
 
 // Ask for standard user name
-void Login::StandardName()
+int Login::StandardName()
 {
-    cout << "Enter Your Name:";
-    cin >> accountHolderName;
+    string name;
+    User user_check;
+
+    cout << "Enter Your Name:" << endl;
+    getline(cin >> ws, name);
+
+    // Check if name is valid
+    if (user_check.isValidName(name))
+    {
+        accountHolderName = name;
+        return 1;
+    }
+
+    // Name not valid
+    return 0;
 }
 
 // Save login info into a User Class that is then used by other transaction

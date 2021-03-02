@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include <regex>
 
 using namespace std;
 
@@ -12,6 +13,7 @@ public:
     int bankAccountNumber;
     string userName;
     bool isAdmin;
+    int isValidName(string name);
 };
 
 // Login class that facilitate and validate login
@@ -24,6 +26,6 @@ private:
 public:
     int RunLogin();
     int SelectSession();
-    void StandardName();
+    int StandardName();
     User saveUserInfo();
 };
