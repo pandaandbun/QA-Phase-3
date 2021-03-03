@@ -131,7 +131,7 @@ Transaction AdminMenu(User user, CurrentBankAccounts accs, BankAccountTransactio
     cout << endl
          << "MAIN MENU (Admin Privleges ON)\n"
          << "==============================\n"
-         << "1. Withdrawl\n"
+         << "1. Withdrawal\n"
          << "2. Transfer\n"
          << "3. Pay Bill\n"
          << "4. Deposit\n"
@@ -216,7 +216,7 @@ Transaction StandardMenu(User user, CurrentBankAccounts accs, BankAccountTransac
     cout << endl
          << "MAIN MENU\n"
          << "===========\n"
-         << "1. Withdrawl\n"
+         << "1. Withdrawal\n"
          << "2. Transfer\n"
          << "3. Pay Bill\n"
          << "4. Deposit\n"

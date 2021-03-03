@@ -1,0 +1,5 @@
+1/
+ETF Diff Check
+Files 1/Ran/withdrawal1.etf and 1/Expected/withdrawal1.etf are identical
+ETF Diff Check
+Files 1/Ran/withdrawal1.bto and 1/Expected/withdrawal1.bto are identical

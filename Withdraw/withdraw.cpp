@@ -77,7 +77,7 @@ int Withdraw::EnterAccountNumber()
 // Enter the amount you are withdrawing
 int Withdraw::EnterAmount()
 {
-    cout << "Enter the ammount to withdraw:" << endl;
+    cout << "Enter the amount to withdraw:" << endl;
     cin >> amountWithdraw;
 
     cout << "Payment Successful!" << endl;
