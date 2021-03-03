@@ -34,6 +34,7 @@ CurrentBankAccounts::CurrentBankAccounts(string fileName)
 }
 
 // ---------------------------------------
+
 // Add new account to file
 void CurrentBankAccounts::CreateAccount(BankAccount acc)
 {
@@ -118,7 +119,7 @@ void CurrentBankAccounts::DisableAccount(BankAccount acc)
     ss << setw(5) << setfill('0') << acc.accountNumber;
     string paddedAccountNumber = ss.str();
 
-    // Delete account
+    // Disable account
     while (getline(in, line))
     {
         string accNumber = line.substr(0, 5);
@@ -135,7 +136,48 @@ void CurrentBankAccounts::DisableAccount(BankAccount acc)
     rename("temp.txt", p);
 }
 
+// Update Account Balance from file
+void CurrentBankAccounts::UpdateAccount(BankAccount acc)
+{
+    ifstream in(fileName);
+    ofstream out("temp.txt");
+
+    string line;
+
+    // Account Number
+    ostringstream ss;
+    ss << setw(5) << setfill('0') << acc.accountNumber;
+    string paddedAccountNumber = ss.str();
+
+    // Update account
+    while (getline(in, line))
+    {
+        string accNumber = line.substr(0, 5);
+        if (accNumber == paddedAccountNumber)
+        {
+            // New Account Balance
+            float newBalance = stof(line.substr(29, 8)) + acc.accountBalance;
+
+            // Convert Balance to String
+            ostringstream ss2;
+            ss2 << setw(8) << setfill('0') << setprecision(2) << fixed << newBalance;
+            string paddedAccountBalance = ss2.str();
+
+            // Update the line
+            line.replace(29, 8, paddedAccountBalance);
+        }
+        out << line << endl;
+    }
+
+    // Overwriting old file
+    const char *p = fileName.c_str();
+    remove(p);
+    rename("temp.txt", p);
+}
+
+
 // ---------------------------------------
+
 // Read the file
 // Find how many bank account there is
 // Create an array of bank account that size

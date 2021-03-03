@@ -1,11 +1,13 @@
 #include "disable.h"
 
+// Constructor
 Disable::Disable(CurrentBankAccounts currAccounts, User currUser)
 {
     this->currAccounts = currAccounts;
     this->currUser = currUser;
 }
 
+// Where everything is run
 Transaction Disable::RunDisable()
 {
     if (currUser.isAdmin)
@@ -29,6 +31,7 @@ Transaction Disable::RunDisable()
     return temp;
 }
 
+// Enter Account Holder Name Prompt
 int Disable::EnterAccountHolderName()
 {
     cout << "Enter Account Holder Name:" << endl;
@@ -36,6 +39,7 @@ int Disable::EnterAccountHolderName()
     return 1;
 }
 
+// Enter Account number
 int Disable::EnterAccountNumber()
 {
     cout << "Enter Account Number:" << endl;
@@ -43,6 +47,7 @@ int Disable::EnterAccountNumber()
     return 1;
 }
 
+// Check if the entered account is valid
 int Disable::CheckValidAccount()
 {
     for (int i = 0; i < currAccounts.accounts.size(); i++)
@@ -61,6 +66,7 @@ int Disable::CheckValidAccount()
     return 0;
 }
 
+// Disable the specified account
 int Disable::DisableAccount()
 {
     cout << "Account Disable" << endl;
@@ -68,6 +74,7 @@ int Disable::DisableAccount()
     return 1;
 }
 
+// Create a record of this transaction
 Transaction Disable::SaveTransaction()
 {
     Transaction transaction(7, acc.accountHolderName, acc.accountNumber, 0, "00");

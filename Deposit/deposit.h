@@ -9,7 +9,7 @@
 class Deposit
 {
 private:
-    float depositAmount;
+    BankAccount acc;
     CurrentBankAccounts currAccounts;
     User currUser;
 
@@ -22,4 +22,5 @@ public:
     int AdminName();
     int EnterAccountNumber();
     int EnterAmount();
+    int UpdateAccount();
 };

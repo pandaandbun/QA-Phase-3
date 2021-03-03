@@ -26,7 +26,10 @@ Transaction Deposit::RunDeposit()
     {
         if (EnterAmount())
         {
-            return SaveTransaction();
+            if (UpdateAccount())
+            {
+                return SaveTransaction();
+            }
         }
     }
 
@@ -46,10 +49,8 @@ int Deposit::AdminName()
 // Where user enter their account number
 int Deposit::EnterAccountNumber()
 {
-    int accountNum;
-
     cout << "Enter your account number:" << endl;
-    cin >> accountNum;
+    cin >> acc.accountNumber;
 
     // Validation of account number and account name
     for (int i = 0; i < currAccounts.accounts.size(); i++)
@@ -58,9 +59,9 @@ int Deposit::EnterAccountNumber()
         string currAccName = currAccounts.accounts[i].accountHolderName;
         string currAccStatus = currAccounts.accounts[i].accountStatus;
 
-        if (accountNum == currAccNum && currUser.userName == currAccName)
+        if (acc.accountNumber == currAccNum && currUser.userName == currAccName)
         {
-            currUser.bankAccountNumber = accountNum;
+            currUser.bankAccountNumber = acc.accountNumber;
             if (currAccStatus == "D")
             {
                 cout << "Account Disabled!" << endl;
@@ -79,16 +80,24 @@ int Deposit::EnterAccountNumber()
 int Deposit::EnterAmount()
 {
     cout << "Enter the ammount to be deposit:" << endl;
-    cin >> depositAmount;
+    cin >> acc.accountBalance;
 
     cout << "Payment Successful!" << endl;
+    return 1;
+}
+
+// Update account
+int Deposit::UpdateAccount()
+{
+    cout << "Account Updated" << endl;
+    currAccounts.UpdateAccount(acc);
     return 1;
 }
 
 // Save Transaction
 Transaction Deposit::SaveTransaction()
 {
-    Transaction transaction(4, currUser.userName, currUser.bankAccountNumber, depositAmount, "00");
+    Transaction transaction(4, currUser.userName, currUser.bankAccountNumber, acc.accountBalance, "DR");
 
     cout << "Receipt Saved!" << endl;
     return transaction;
