@@ -24,5 +24,7 @@ public:
     int ChangeAccount();
     int EnterAccountHolderName();
     int EnterAccountNumber();
+    int EnterAccountPlan();
     int CheckValidAccount();
+    int CheckValidPlan();
 };

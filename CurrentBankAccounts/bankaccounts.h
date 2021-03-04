@@ -17,6 +17,7 @@ public:
     string accountHolderName;
     string accountStatus;
     float accountBalance;
+    string accountPlan;
 };
 
 // Current Bank Accounts manage many BankAccount instances
