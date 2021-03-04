@@ -10,3 +10,7 @@ Run test  3
 ETF
 BTO
 
+Run test  4
+ETF
+BTO
+
