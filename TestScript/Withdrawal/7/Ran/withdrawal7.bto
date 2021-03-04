@@ -1,31 +1,39 @@
 Welcome to the banking system
 Enter session type: (admin / standard)
 Login Accepted!
-Enter Your Name:
-Hi John
 …...Please wait while we load Current Bank Accounts……
 Success! Please have a great time Banking with us
 
-MAIN MENU
-===========
+MAIN MENU (Admin Privileges ON)
+==============================
 1. Withdrawal
 2. Transfer
 3. Pay Bill
 4. Deposit
+5. Create
+6. Delete
+7. Disable
+8. Change Plan
 0. Logout
 
 Enter Selection: 
+Enter Your Name:
+Hi John
 Enter your account number:
 Account Found!
 Enter the amount to withdraw:
-ERROR: Value Error - withdraw more than $500!
+Error: Value Error - withdraw value cannot exceed $99999.00!
 
-MAIN MENU
-===========
+MAIN MENU (Admin Privileges ON)
+==============================
 1. Withdrawal
 2. Transfer
 3. Pay Bill
 4. Deposit
+5. Create
+6. Delete
+7. Disable
+8. Change Plan
 0. Logout
 
 Enter Selection: 

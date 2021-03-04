@@ -132,7 +132,7 @@ tuple<Transaction, int> AdminMenu(User user, CurrentBankAccounts accs, BankAccou
     int runSession = 1;
 
     cout << endl
-         << "MAIN MENU (Admin Privleges ON)\n"
+         << "MAIN MENU (Admin Privileges ON)\n"
          << "==============================\n"
          << "1. Withdrawal\n"
          << "2. Transfer\n"

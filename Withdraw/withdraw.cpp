@@ -45,10 +45,8 @@ int Withdraw::AdminName()
 // Where user enter their account number
 int Withdraw::EnterAccountNumber()
 {
-    int accountNum;
-
     cout << "Enter your account number:" << endl;
-    cin >> accountNum;
+    cin >> acc.accountNumber;
 
     // Validation for account number and name
     for (int i = 0; i < currAccounts.accounts.size(); i++)
@@ -56,21 +54,25 @@ int Withdraw::EnterAccountNumber()
         int currAccNum = currAccounts.accounts[i].accountNumber;
         string currAccName = currAccounts.accounts[i].accountHolderName;
         string currAccStatus = currAccounts.accounts[i].accountStatus;
+        int currAccBal = currAccounts.accounts[i].accountBalance;
 
-        if (accountNum == currAccNum && currUser.userName == currAccName)
+        if (acc.accountNumber == currAccNum && currUser.userName == currAccName)
         {
-            currUser.bankAccountNumber = accountNum;
+            currUser.bankAccountNumber = acc.accountNumber;
             if (currAccStatus == "D")
             {
                 cout << "Account Disabled!" << endl;
                 return 0;
             }
             cout << "Account Found!" << endl;
+            acc.accountHolderName = currAccName;
+            acc.accountStatus = currAccStatus;
+            acc.accountBalance = currAccBal;
             return 1;
         }
     }
 
-    cout << "Acount Not Found" << endl;
+    cout << "Account Not Found" << endl;
     return 0;
 }
 
@@ -80,14 +82,40 @@ int Withdraw::EnterAmount()
     cout << "Enter the amount to withdraw:" << endl;
     cin >> amountWithdraw;
 
-    cout << "Payment Successful!" << endl;
+    if (amountWithdraw < 0) {
+        cout << "Error: Value Error - cannot withdraw less than $0!" << endl;
+        return 0;
+    } else if(amountWithdraw > 99999.00) {
+        cout << "Error: Value Error - withdraw value cannot exceed $99999.00!" << endl;
+        return 0;
+    }
+    else if (amountWithdraw > 500.00 && !currUser.isAdmin) {
+        cout << "ERROR: Value Error - withdraw more than $500!" << endl;
+        return 0;
+    } else if (amountWithdraw > acc.accountBalance) {
+        cout << "ERROR: Value Error - withdraw value exceeds account balance!" << endl;
+        return 0;
+    }
+    else {
+        acc.accountBalance -= amountWithdraw;
+        UpdateAccount();
+        cout << "Payment Successful!" << endl;
+    }
+
+    return 1;
+}
+
+int Withdraw::UpdateAccount()
+{
+    cout << "Account Updated" << endl;
+    currAccounts.UpdateAccount(acc);
     return 1;
 }
 
 // Save Transaction
 Transaction Withdraw::SaveTransaction()
 {
-    Transaction transaction(1, currUser.userName, currUser.bankAccountNumber, amountWithdraw, "00");
+    Transaction transaction(1, currUser.userName, currUser.bankAccountNumber, amountWithdraw, "CR");
 
     cout << "Receipt Saved!" << endl;
     return transaction;

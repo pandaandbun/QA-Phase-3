@@ -18,7 +18,7 @@ Enter Selection:
 Enter your account number:
 Account Found!
 Enter the amount to withdraw:
-ERROR: Value Error - withdraw more than $500!
+Error: Value Error - cannot withdraw less than $0!
 
 MAIN MENU
 ===========
