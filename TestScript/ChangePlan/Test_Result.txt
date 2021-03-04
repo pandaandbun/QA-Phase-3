@@ -1,66 +1,7 @@
 Run test  1
 ETF
-1c1,2
-< 00                      00000 00000.00 00
----
-> 08 John Smith           12345 00000.00 NP
-> 00                      00000 00000.00 00
 BTO
-1,53c1,42
-< Welcome to the banking system
-< Enter session type: (admin / standard)
-< Login Accepted!
-< …...Please wait while we load Current Bank Accounts……
-< Success! Please have a great time Banking with us
-< 
-< MAIN MENU (Admin Privleges ON)
-< ==============================
-< 1. Withdrawal
-< 2. Transfer
-< 3. Pay Bill
-< 4. Deposit
-< 5. Create
-< 6. Delete
-< 7. Disable
-< 8. Change Plan
-< 0. Logout
-< 
-< Enter Selection: 
-< Enter Account Holder Name:
-< Enter Account Number:
-< Account Not Found
-< 
-< MAIN MENU (Admin Privleges ON)
-< ==============================
-< 1. Withdrawal
-< 2. Transfer
-< 3. Pay Bill
-< 4. Deposit
-< 5. Create
-< 6. Delete
-< 7. Disable
-< 8. Change Plan
-< 0. Logout
-< 
-< Enter Selection: 
-< Command not recognized
-< 
-< MAIN MENU (Admin Privleges ON)
-< ==============================
-< 1. Withdrawal
-< 2. Transfer
-< 3. Pay Bill
-< 4. Deposit
-< 5. Create
-< 6. Delete
-< 7. Disable
-< 8. Change Plan
-< 0. Logout
-< 
-< Enter Selection: 
-< Transaction Saved
-< Session Terminated
----
+0a1,41
 > Welcome to the banking system
 > Enter session type: (admin / standard)
 > Login Accepted!
@@ -85,7 +26,6 @@ BTO
 > Account Found!
 > Enter Account Plan:
 > Set payment plan from student (SP) to non-student (NP)
-> Account Change
 > Receipt Saved!
 > 
 > MAIN MENU (Admin Privleges ON)
@@ -107,24 +47,16 @@ BTO
 Run test  2
 ETF
 BTO
-1d0
-< Welcome to the banking system
 
 Run test  3
 ETF
 BTO
-1d0
-< Welcome to the banking system
 
 Run test  4
 ETF
 BTO
-1d0
-< Welcome to the banking system
 
 Run test  5
 ETF
 BTO
-1d0
-< Welcome to the banking system
 
