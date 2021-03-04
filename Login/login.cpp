@@ -62,7 +62,6 @@ int Login::SelectSession()
 {
     string type;
 
-    cout << "Welcome to the banking system\n";
     cout << "Enter session type: (admin / standard)\n";
     cin >> type;
 

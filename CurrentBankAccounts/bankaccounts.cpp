@@ -25,6 +25,7 @@ void trim(string &s)
 }
 
 // ---------------------------------------
+
 // Default Constructor
 CurrentBankAccounts::CurrentBankAccounts() {}
 

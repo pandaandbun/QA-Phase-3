@@ -6,7 +6,7 @@ Success! Please have a great time Banking with us
 
 MAIN MENU (Admin Privleges ON)
 ==============================
-1. Withdrawl
+1. Withdrawal
 2. Transfer
 3. Pay Bill
 4. Deposit
@@ -17,4 +17,20 @@ MAIN MENU (Admin Privleges ON)
 0. Logout
 
 Enter Selection: 
+Command not recognized
+
+MAIN MENU (Admin Privleges ON)
+==============================
+1. Withdrawal
+2. Transfer
+3. Pay Bill
+4. Deposit
+5. Create
+6. Delete
+7. Disable
+8. Change Plan
+0. Logout
+
+Enter Selection: 
+Transaction Saved
 Session Terminated

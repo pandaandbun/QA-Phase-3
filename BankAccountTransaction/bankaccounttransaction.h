@@ -32,5 +32,5 @@ public:
 
     BankAccountTransaction();
     BankAccountTransaction(string fileName);
-    void CreateTransactionFile();
+    int CreateTransactionFile();
 };

@@ -1,11 +1,13 @@
 #include "delete.h"
 
+// Constructor
 Delete::Delete(CurrentBankAccounts currAccounts, User currUser)
 {
     this->currAccounts = currAccounts;
     this->currUser = currUser;
 }
 
+// Where everything is run
 Transaction Delete::RunDelete()
 {
     if (currUser.isAdmin)
@@ -29,6 +31,7 @@ Transaction Delete::RunDelete()
     return temp;
 }
 
+// Enter account holder name
 int Delete::EnterAccountHolderName()
 {
     cout << "Enter Account Holder Name:" << endl;
@@ -36,6 +39,7 @@ int Delete::EnterAccountHolderName()
     return 1;
 }
 
+// Enter account number
 int Delete::EnterAccountNumber()
 {
 
@@ -44,6 +48,7 @@ int Delete::EnterAccountNumber()
     return 1;
 }
 
+// Check if account is valid
 int Delete::CheckValidAccount()
 {
     for (int i = 0; i < currAccounts.accounts.size(); i++)
@@ -62,6 +67,7 @@ int Delete::CheckValidAccount()
     return 0;
 }
 
+// Delete account
 int Delete::DeleteAccount()
 {
     cout << "Account Deleted" << endl;
@@ -69,6 +75,7 @@ int Delete::DeleteAccount()
     return 1;
 }
 
+// Save this transaction
 Transaction Delete::SaveTransaction()
 {
     Transaction transaction(6, acc.accountHolderName, acc.accountNumber, 0, "00");

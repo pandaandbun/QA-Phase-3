@@ -45,6 +45,7 @@ This should trigger the code to create a transaction file with the current times
 --------------------------------------------------------------------------------------
 */
 
+#include <tuple>
 #include "./Login/login.h"
 #include "./Transfer/transfer.h"
 #include "./Paybill/paybill.h"
@@ -114,24 +115,26 @@ Transaction TransactionDeposit(CurrentBankAccounts accs, User user)
 }
 
 // Logout
-void TransactionLogout(BankAccountTransaction trans)
+int TransactionLogout(BankAccountTransaction trans)
 {
     Logout logout(trans);
-    logout.RunLogout();
+    return logout.RunLogout();
 }
 
 // ----------------------------------------------
+
 // Selection Menus
-Transaction AdminMenu(User user, CurrentBankAccounts accs, BankAccountTransaction sessionTransactions)
+tuple<Transaction, int> AdminMenu(User user, CurrentBankAccounts accs, BankAccountTransaction sessionTransactions)
 {
     Transaction transaction;
     // Display menu for admin user
-    int menuSelection;
+    string menuSelection;
+    int runSession = 1;
 
     cout << endl
          << "MAIN MENU (Admin Privleges ON)\n"
          << "==============================\n"
-         << "1. Withdrawl\n"
+         << "1. Withdrawal\n"
          << "2. Transfer\n"
          << "3. Pay Bill\n"
          << "4. Deposit\n"
@@ -147,76 +150,77 @@ Transaction AdminMenu(User user, CurrentBankAccounts accs, BankAccountTransactio
     cin >> menuSelection;
 
     // Withdrawal
-    if (menuSelection == 1)
+    if (menuSelection == "withdrawal")
     {
         transaction = TransactionWithdraw(accs, user);
     }
 
     // Transfer
-    else if (menuSelection == 2)
+    else if (menuSelection == "transfer")
     {
         transaction = TransactionTransfer(accs, user);
     }
 
     // Paybill
-    else if (menuSelection == 3)
+    else if (menuSelection == "paybill")
     {
         transaction = TransactionPayBill(accs, user);
     }
 
     // Deposit
-    else if (menuSelection == 4)
+    else if (menuSelection == "deposit")
     {
         transaction = TransactionDeposit(accs, user);
     }
 
     // Create
-    else if (menuSelection == 5)
+    else if (menuSelection == "create")
     {
         transaction = TransactionCreate(accs, user);
     }
 
     // Delete
-    else if (menuSelection == 6)
+    else if (menuSelection == "delete")
     {
         transaction = TransactionDelete(accs, user);
     }
 
     // Disab;e
-    else if (menuSelection == 7)
+    else if (menuSelection == "disable")
     {
         transaction = TransactionDisable(accs, user);
     }
 
     // Change Plan
-    else if (menuSelection == 8)
+    else if (menuSelection == "changeplan")
     {
         transaction = TransactionChangePlan(accs, user);
     }
 
     // Logout
-    else if (menuSelection == 0)
+    else if (menuSelection == "logout")
     {
-        TransactionLogout(sessionTransactions);
+        runSession = TransactionLogout(sessionTransactions);
     }
     else
     {
         cout << "Command not recognized" << endl;
     }
 
-    return transaction;
+    return {transaction, runSession};
 }
 
-Transaction StandardMenu(User user, CurrentBankAccounts accs, BankAccountTransaction sessionTransactions)
+tuple<Transaction, int> StandardMenu(User user, CurrentBankAccounts accs, BankAccountTransaction sessionTransactions)
 {
     Transaction transaction;
     // Display menu for standard user
-    int menuSelection;
+    string menuSelection;
+    int runSession = 1;
 
     cout << endl
          << "MAIN MENU\n"
          << "===========\n"
-         << "1. Withdrawl\n"
+         << "1. Withdrawal\n"
          << "2. Transfer\n"
          << "3. Pay Bill\n"
          << "4. Deposit\n"
@@ -228,57 +232,101 @@ Transaction StandardMenu(User user, CurrentBankAccounts accs, BankAccountTransac
     cin >> menuSelection;
 
     // Withdrawal
-    if (menuSelection == 1)
+    if (menuSelection == "withdrawal")
     {
         transaction = TransactionWithdraw(accs, user);
     }
 
     // Transfer
-    else if (menuSelection == 2)
+    else if (menuSelection == "transfer")
     {
         transaction = TransactionTransfer(accs, user);
     }
 
     // Paybill
-    else if (menuSelection == 3)
+    else if (menuSelection == "paybill")
     {
         transaction = TransactionPayBill(accs, user);
     }
 
     // Deposit
-    else if (menuSelection == 4)
+    else if (menuSelection == "deposit")
     {
         transaction = TransactionDeposit(accs, user);
     }
 
     // Logout
-    else if (menuSelection == 0)
+    else if (menuSelection == "logout")
     {
-        TransactionLogout(sessionTransactions);
+        runSession = TransactionLogout(sessionTransactions);
     }
     else
     {
         cout << "Command not recognized" << endl;
     }
-    return transaction;
+    return {transaction, runSession};
 }
 
-Transaction Menu(User user, CurrentBankAccounts accs, BankAccountTransaction sessionTransactions)
+tuple<Transaction, int> Menu(User user, CurrentBankAccounts accs, BankAccountTransaction sessionTransactions)
 {
     Transaction transaction;
+    int runSession = 1;
+
     // Selection for ADMIN
     if (user.isAdmin)
     {
-        transaction = AdminMenu(user, accs, sessionTransactions);
+        tie(transaction, runSession) = AdminMenu(user, accs, sessionTransactions);
     }
 
     // Selection for STANDARD
     else
     {
-        transaction = StandardMenu(user, accs, sessionTransactions);
+        tie(transaction, runSession) = StandardMenu(user, accs, sessionTransactions);
     }
 
-    return transaction;
+    return {transaction, runSession};
+}
+
+void SelectionScreen(string curretBankAccountFileName, string transactionFileName)
+{
+    // Logged In
+    Login session;
+
+    // Transaction
+    BankAccountTransaction sessionTransactions(transactionFileName);
+
+    // Call login method here and return value for isLoggedIn
+    if (session.RunLogin())
+    {
+        // Set session to keep running
+        int runSession = 1;
+
+        // Save current user info
+        User user = session.saveUserInfo();
+
+        // Load Current Bank Acccounts
+        CurrentBankAccounts accs(curretBankAccountFileName);
+        accs.LoadBankAccounts();
+
+        // Selection Screen
+        while (runSession)
+        {
+            // Transaction
+            Transaction transaction;
+            // Menu
+            tie(transaction, runSession) = Menu(user, accs, sessionTransactions);
+
+            // Add valid transaction to transaction list
+            if (!transaction.accountHolderName.empty())
+            {
+                sessionTransactions.transactions.push_back(transaction);
+            }
+        }
+    }
+    else
+    {
+        TransactionLogout(sessionTransactions);
+    }
 }
 
 // -----------------------------------------
@@ -286,43 +334,35 @@ int main(int argc, char **argv)
 {
     if (argc >= 3)
     {
-        // File names
-        string curretBankAccountFileName = argv[1];
-        string transactionFileName = argv[2];
+        string loginCommand;
+        // Intro message
+        cout << "Welcome to the banking system" << endl;
 
-        // Logged In
-        Login session;
-
-        // Transaction
-        BankAccountTransaction sessionTransactions(transactionFileName);
-
-        // Call login method here and return value for isLoggedIn
-        if (session.RunLogin())
+        // loop until user type exit
+        while (1)
         {
-            // Save current user info
-            User user = session.saveUserInfo();
+            // Accept login command
+            cin >> loginCommand;
 
-            // Load Current Bank Acccounts
-            CurrentBankAccounts accs(curretBankAccountFileName);
-            accs.LoadBankAccounts();
-            // Selection Screen
-            while (1)
+            // Login Command
+            if (loginCommand == "login")
             {
-                // Transaction
-                Transaction transaction;
-                // Menu
-                transaction = Menu(user, accs, sessionTransactions);
+                // File names
+                string curretBankAccountFileName = argv[1];
+                string transactionFileName = argv[2];
 
-                // Add valid transaction to transaction list
-                if (!transaction.accountHolderName.empty())
-                {
-                    sessionTransactions.transactions.push_back(transaction);
-                }
+                // The actual ATM
+                SelectionScreen(curretBankAccountFileName, transactionFileName);
             }
-        }
-        else
-        {
-            TransactionLogout(sessionTransactions);
+            // break loop
+            else if (loginCommand == "exit")
+            {
+                break;
+            }
+            else
+            {
+                cout << "Command not recognized." << endl;
+            }
         }
     }
     else
