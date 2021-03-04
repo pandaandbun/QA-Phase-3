@@ -11,6 +11,7 @@ using namespace std;
 class Withdraw
 {
 private:
+    BankAccount acc;
     CurrentBankAccounts currAccounts;
     User currUser;
     float amountWithdraw;
@@ -24,4 +25,5 @@ public:
     int AdminName();
     int EnterAccountNumber();
     int EnterAmount();
+    int UpdateAccount();
 };

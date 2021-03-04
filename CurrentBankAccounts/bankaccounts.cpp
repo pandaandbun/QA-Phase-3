@@ -156,12 +156,9 @@ void CurrentBankAccounts::UpdateAccount(BankAccount acc)
         string accNumber = line.substr(0, 5);
         if (accNumber == paddedAccountNumber)
         {
-            // New Account Balance
-            float newBalance = stof(line.substr(29, 8)) + acc.accountBalance;
-
             // Convert Balance to String
             ostringstream ss2;
-            ss2 << setw(8) << setfill('0') << setprecision(2) << fixed << newBalance;
+            ss2 << setw(8) << setfill('0') << setprecision(2) << fixed << acc.accountBalance;
             string paddedAccountBalance = ss2.str();
 
             // Update the line
