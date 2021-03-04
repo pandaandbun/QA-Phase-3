@@ -47,7 +47,9 @@ int Login::RunLogin()
         }
 
         cout << "Name not valid" << endl;
-    } else {
+    }
+    else
+    {
         // Admin Validated
         return 1;
     }

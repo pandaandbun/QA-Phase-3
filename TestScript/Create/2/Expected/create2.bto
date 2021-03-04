@@ -17,31 +17,9 @@ MAIN MENU (Admin Privleges ON)
 0. Logout
 
 Enter Selection: 
-Enter Your Name:
-Hi John
-Enter your account number:
-Account Found!
-Enter the ammount to withdraw:
-Payment Successful!
-Receipt Saved!
-
-MAIN MENU (Admin Privleges ON)
-==============================
-1. Withdrawal
-2. Transfer
-3. Pay Bill
-4. Deposit
-5. Create
-6. Delete
-7. Disable
-8. Change Plan
-0. Logout
-
-Enter Selection: 
 Enter Account Holder Name:
-Enter Account Number:
-Account Found!
-Account Change
+Enter Account Balance:
+Account Created
 Receipt Saved!
 
 MAIN MENU (Admin Privleges ON)
