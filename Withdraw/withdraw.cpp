@@ -54,7 +54,7 @@ int Withdraw::EnterAccountNumber()
         int currAccNum = currAccounts.accounts[i].accountNumber;
         string currAccName = currAccounts.accounts[i].accountHolderName;
         string currAccStatus = currAccounts.accounts[i].accountStatus;
-        int currAccBal = currAccounts.accounts[i].accountBalance;
+        float currAccBal = currAccounts.accounts[i].accountBalance;
 
         if (acc.accountNumber == currAccNum && currUser.userName == currAccName)
         {
@@ -85,7 +85,7 @@ int Withdraw::EnterAmount()
     if (amountWithdraw < 0) {
         cout << "Error: Value Error - cannot withdraw less than $0!" << endl;
         return 0;
-    } else if(amountWithdraw > 99999.00) {
+    } else if(amountWithdraw > 99999.99) {
         cout << "Error: Value Error - withdraw value cannot exceed $99999.00!" << endl;
         return 0;
     }
