@@ -16,8 +16,14 @@ Transaction ChangePlan::RunChangePlan()
             {
                 if (CheckValidAccount())
                 {
-                    ChangeAccount();
-                    return SaveTransaction();
+                    if (EnterAccountPlan())
+                    {
+                        if (CheckValidPlan())
+                        {
+                            ChangeAccount();
+                            return SaveTransaction();
+                        }
+                    }
                 }
             }
         }
@@ -41,6 +47,13 @@ int ChangePlan::EnterAccountNumber()
     return 1;
 }
 
+int ChangePlan::EnterAccountPlan()
+{
+    cout << "Enter Account Plan:" << endl;
+    cin >> acc.accountPlan;
+    return 1;
+}
+
 int ChangePlan::CheckValidAccount()
 {
     for (int i = 0; i < currAccounts.accounts.size(); i++)
@@ -59,9 +72,27 @@ int ChangePlan::CheckValidAccount()
     return 0;
 }
 
+int ChangePlan::CheckValidPlan()
+{
+    if (acc.accountPlan == "SP" || acc.accountPlan == "NP")
+    {
+        return 1;
+    }
+    
+    cout << "Plan not valid" << endl;
+    return 0;
+}
+
 // TODO: Figure out where student plan is set
 int ChangePlan::ChangeAccount()
 {
+    if (acc.accountPlan == "SP"){
+        cout << "Set payment plan from student (SP) to non-student (NP)" << endl;
+        acc.accountPlan = "NP";
+    }
+    else if (acc.accountPlan == "NP") {
+        cout << "No change was made to payment plan" << endl;
+    }
     cout << "Account Change" << endl;
 
     return 1;
@@ -69,7 +100,7 @@ int ChangePlan::ChangeAccount()
 
 Transaction ChangePlan::SaveTransaction()
 {
-    Transaction transaction(8, acc.accountHolderName, acc.accountNumber, 0, "SP");
+    Transaction transaction(8, acc.accountHolderName, acc.accountNumber, 0, acc.accountPlan);
     cout << "Receipt Saved!" << endl;
     return transaction;
 }
