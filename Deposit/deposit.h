@@ -12,6 +12,7 @@ private:
     BankAccount acc;
     CurrentBankAccounts currAccounts;
     User currUser;
+    float depositAmount;
 
 public:
     Deposit(CurrentBankAccounts currAccounts, User currUser);

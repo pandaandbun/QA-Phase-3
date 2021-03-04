@@ -54,7 +54,7 @@ int Withdraw::EnterAccountNumber()
         int currAccNum = currAccounts.accounts[i].accountNumber;
         string currAccName = currAccounts.accounts[i].accountHolderName;
         string currAccStatus = currAccounts.accounts[i].accountStatus;
-        int currAccBal = currAccounts.accounts[i].accountBalance;
+        float currAccBal = currAccounts.accounts[i].accountBalance;
 
         if (acc.accountNumber == currAccNum && currUser.userName == currAccName)
         {

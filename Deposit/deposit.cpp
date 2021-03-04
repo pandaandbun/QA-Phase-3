@@ -58,6 +58,7 @@ int Deposit::EnterAccountNumber()
         int currAccNum = currAccounts.accounts[i].accountNumber;
         string currAccName = currAccounts.accounts[i].accountHolderName;
         string currAccStatus = currAccounts.accounts[i].accountStatus;
+        float currAccBal = currAccounts.accounts[i].accountBalance;
 
         if (acc.accountNumber == currAccNum && currUser.userName == currAccName)
         {
@@ -68,6 +69,11 @@ int Deposit::EnterAccountNumber()
                 return 0;
             }
             cout << "Account Found!" << endl;
+
+            acc.accountHolderName = currAccName;
+            acc.accountStatus = currAccStatus;
+            acc.accountBalance = currAccBal;
+
             return 1;
         }
     }
@@ -80,7 +86,34 @@ int Deposit::EnterAccountNumber()
 int Deposit::EnterAmount()
 {
     cout << "Enter the ammount to be deposit:" << endl;
-    cin >> acc.accountBalance;
+    cin >> depositAmount;
+
+    if (depositAmount < 0)
+    {
+        cout << "Error: Value Error - cannot deposit less than $0!" << endl;
+        return 0;
+    }
+    else if (depositAmount > 99999.00)
+    {
+        cout << "Error: Value Error - deposit value cannot exceed $99999.00!" << endl;
+        return 0;
+    }
+    else if (depositAmount > 500.00 && !currUser.isAdmin)
+    {
+        cout << "ERROR: Value Error - withdraw more than $500!" << endl;
+        return 0;
+    }
+    // else if (depositAmount > acc.accountBalance)
+    // {
+    //     cout << "ERROR: Value Error - withdraw value exceeds account balance!" << endl;
+    //     return 0;
+    // }
+    else
+    {
+        acc.accountBalance += depositAmount;
+        UpdateAccount();
+        cout << "Payment Successful!" << endl;
+    }
 
     cout << "Payment Successful!" << endl;
     return 1;
@@ -97,7 +130,7 @@ int Deposit::UpdateAccount()
 // Save Transaction
 Transaction Deposit::SaveTransaction()
 {
-    Transaction transaction(4, currUser.userName, currUser.bankAccountNumber, acc.accountBalance, "DR");
+    Transaction transaction(4, currUser.userName, currUser.bankAccountNumber, depositAmount, "DR");
 
     cout << "Receipt Saved!" << endl;
     return transaction;
