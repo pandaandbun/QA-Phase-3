@@ -12,7 +12,11 @@ Logout::Logout(BankAccountTransaction currTransaction)
 // After exit the program
 int Logout::RunLogout()
 {
-    currTransaction.CreateTransactionFile();
+    if (currTransaction.CreateTransactionFile())
+    {
+        cout << "Transaction Saved" << endl;
+    }
     cout << "Session Terminated" << endl;
-    exit(0);
+
+    return 0;
 }

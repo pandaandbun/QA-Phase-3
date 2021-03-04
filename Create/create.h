@@ -24,5 +24,6 @@ public:
     int CreateAccount();
     int EnterAccountHolderName();
     int EnterAccountBalance();
+    int CheckValidAccountBalance(float newAccountBalance);
     int GenerateAccountNumber();
 };

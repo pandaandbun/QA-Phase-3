@@ -39,4 +39,5 @@ public:
     void CreateAccount(BankAccount acc);
     void DeleteAccount(BankAccount acc);
     void DisableAccount(BankAccount acc);
+    void UpdateAccount(BankAccount acc);
 };

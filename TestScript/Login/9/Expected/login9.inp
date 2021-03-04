@@ -1,9 +1,11 @@
+login
 admin
-1
+withdrawal
 John
 56789
 10.5
-8
+changeplan
 John Smith
 12345
-0
+logout
+exit

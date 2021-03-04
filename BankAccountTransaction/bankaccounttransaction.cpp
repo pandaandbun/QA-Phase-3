@@ -25,7 +25,7 @@ BankAccountTransaction::BankAccountTransaction(string fileName)
 }
 
 // Write to file containing the transaction in that session
-void BankAccountTransaction::CreateTransactionFile()
+int BankAccountTransaction::CreateTransactionFile()
 {
     // Set current time as file name
     ofstream out(fileName);
@@ -67,4 +67,6 @@ void BankAccountTransaction::CreateTransactionFile()
 
     // End of line transaction code
     out << "00                      00000 00000.00 00" << endl;
+
+    return 1;
 }

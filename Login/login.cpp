@@ -47,7 +47,9 @@ int Login::RunLogin()
         }
 
         cout << "Name not valid" << endl;
-    } else {
+    }
+    else
+    {
         // Admin Validated
         return 1;
     }
@@ -62,7 +64,6 @@ int Login::SelectSession()
 {
     string type;
 
-    cout << "Welcome to the banking system\n";
     cout << "Enter session type: (admin / standard)\n";
     cin >> type;
 
