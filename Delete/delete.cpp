@@ -61,6 +61,11 @@ int Delete::CheckValidAccount()
 
         if (acc.accountNumber == currAccNum && acc.accountHolderName == currAccName)
         {
+            if (currAccounts.accounts[i].accountStatus == "D")
+            {
+                cout << "Account Disabled!" << endl;
+                return 0;
+            }
             cout << "Account Found!" << endl;
             return 1;
         }
