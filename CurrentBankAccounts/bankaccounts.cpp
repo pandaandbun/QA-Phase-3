@@ -105,6 +105,13 @@ void CurrentBankAccounts::DeleteAccount(BankAccount acc)
     const char *p = fileName.c_str();
     remove(p);
     rename("temp.txt", p);
+
+    // Updating Deleted Account on Memory
+    for (int i = 0; i < accounts.size(); i++){
+        if (accounts[i].accountHolderName.compare(acc.accountHolderName) == 0 && accounts[i].accountNumber == acc.accountNumber){
+            accounts.erase(accounts.begin() + i);
+        }
+    }
 }
 
 // Disable Account from file
@@ -135,6 +142,13 @@ void CurrentBankAccounts::DisableAccount(BankAccount acc)
     const char *p = fileName.c_str();
     remove(p);
     rename("temp.txt", p);
+
+    // Updating Disabled Account on Memory
+    for (int i = 0; i < accounts.size(); i++){
+        if (accounts[i].accountHolderName.compare(acc.accountHolderName) == 0 && accounts[i].accountNumber == acc.accountNumber){
+            accounts[i].accountStatus = "D";
+        }
+    }
 }
 
 // Update Account Balance from file
