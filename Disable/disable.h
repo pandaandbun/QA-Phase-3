@@ -12,11 +12,15 @@ class Disable
 {
 private:
     BankAccount acc;
-    CurrentBankAccounts currAccounts;
+    CurrentBankAccounts &currAccounts;
     User currUser;
 
 public:
-    Disable(CurrentBankAccounts currAccounts, User currUser);
+    Disable(CurrentBankAccounts &currAccounts, User currUser)
+        : currAccounts(currAccounts)
+    {
+        this->currUser = currUser;
+    }
 
     Transaction RunDisable();
     Transaction SaveTransaction();

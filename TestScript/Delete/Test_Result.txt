@@ -3,10 +3,11 @@ ETF
 0a1
 > 06 Gone Once            60001 00000.00 00
 BTO
-22c22,23
+22c22,24
 < Account Not Found
 ---
 > Account Found!
+> Account Deleted
 > Receipt Saved!
 
 Run test  2/test_number
@@ -23,12 +24,10 @@ BTO
 
 Run test  5/test_number
 ETF
-1d0
-< 06 Gone Twice           60002 00000.00 00
 BTO
-23,24c23
-< Account Deleted
-< Receipt Saved!
+22c22,23
+< Account Not Found
 ---
+> Account Found!
 > Invalid Balance
 

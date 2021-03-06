@@ -1,12 +1,5 @@
 #include "transfer.h"
 
-// Constructor accepts the current bank accounts instance
-Transfer::Transfer(CurrentBankAccounts currAccounts, User currUser)
-{
-    this->currAccounts = currAccounts;
-    this->currUser = currUser;
-}
-
 // Where everything come together
 Transaction Transfer::RunTransfer()
 {

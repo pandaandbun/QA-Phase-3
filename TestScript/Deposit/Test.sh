@@ -7,6 +7,11 @@
 #Remake changes
 find ../../ -type f -name Makefile -execdir make \;
 
+# Copying the master bank account file
+master="../../currentbankaccountfile.txt"
+copy="./currentbankaccountfile.txt"
+cp -r $master $copy
+
 #Iterate over withdrawal test cases by number
 for test_number in */; do
     #Test name
@@ -21,7 +26,7 @@ for test_number in */; do
     echo ""
 
     # Run test
-    ../../bank ../../currentbankaccountfile.txt $test_number/Ran/$etf_file < $test_number/Expected/$input_file > $test_number/Ran/$output_file
+    ../../bank $copy $test_number/Ran/$etf_file < $test_number/Expected/$input_file > $test_number/Ran/$output_file
 
     # Compare results
     etf_result=${test_number}Ran/$etf_file

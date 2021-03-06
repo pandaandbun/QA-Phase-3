@@ -14,11 +14,15 @@ private:
     int fromAccountNumber;
     int toAccountNumber;
     float transferAmount;
-    CurrentBankAccounts currAccounts;
+    CurrentBankAccounts& currAccounts;
     User currUser;
 
 public:
-    Transfer(CurrentBankAccounts currAccounts, User currUser);
+    Transfer(CurrentBankAccounts& currAccounts, User currUser)
+        : currAccounts(currAccounts)
+    {
+        this->currUser = currUser;
+    }
 
     Transaction RunTransfer();
     Transaction SaveTransaction();

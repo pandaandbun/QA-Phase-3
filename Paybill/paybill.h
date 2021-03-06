@@ -12,13 +12,17 @@ class Paybill
 {
 private:
     BankAccount acc;
-    CurrentBankAccounts currAccounts;
+    CurrentBankAccounts &currAccounts;
     string companyName;
     User currUser;
     float amountPaid;
 
 public:
-    Paybill(CurrentBankAccounts currAccounts, User currUser);
+    Paybill(CurrentBankAccounts &currAccounts, User currUser)
+        : currAccounts(currAccounts)
+    {
+        this->currUser = currUser;
+    }
 
     Transaction RunPaybill();
     Transaction SaveTransaction();

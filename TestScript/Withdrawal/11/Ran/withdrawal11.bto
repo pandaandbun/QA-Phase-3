@@ -18,7 +18,9 @@ Enter Selection:
 Enter your account number:
 Account Found!
 Enter the amount to withdraw:
-ERROR: Value Error - withdraw value exceeds account balance!
+Account Updated
+Payment Successful!
+Receipt Saved!
 
 MAIN MENU
 ===========

@@ -1,21 +1,12 @@
 #include "disable.h"
 
-// Constructor
-Disable::Disable(CurrentBankAccounts currAccounts, User currUser)
-{
-    this->currAccounts = currAccounts;
-    this->currUser = currUser;
-}
-
 // Where everything is run
 Transaction Disable::RunDisable()
 {
     if (currUser.isAdmin)
     {
-
         if (EnterAccountHolderName())
         {
-
             if (EnterAccountNumber())
             {
                 if (CheckValidAccount())
@@ -57,6 +48,7 @@ int Disable::CheckValidAccount()
 
         if (acc.accountNumber == currAccNum && acc.accountHolderName == currAccName)
         {
+            // Check for disable acount
             if (currAccounts.accounts[i].accountStatus == "D")
             {
                 cout << "Account Disabled!" << endl;

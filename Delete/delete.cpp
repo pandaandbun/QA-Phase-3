@@ -1,12 +1,5 @@
 #include "delete.h"
 
-// Constructor
-Delete::Delete(CurrentBankAccounts currAccounts, User currUser)
-{
-    this->currAccounts = currAccounts;
-    this->currUser = currUser;
-}
-
 // Where everything is run
 Transaction Delete::RunDelete()
 {
@@ -66,6 +59,7 @@ int Delete::CheckValidAccount()
                 cout << "Account Disabled!" << endl;
                 return 0;
             }
+            
             cout << "Account Found!" << endl;
             return 1;
         }

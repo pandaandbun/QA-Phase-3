@@ -59,28 +59,28 @@ This should trigger the code to create a transaction file with the current times
 #include "./Logout/logout.h"
 
 // Paybill
-Transaction TransactionPayBill(CurrentBankAccounts accs, User user)
+Transaction TransactionPayBill(CurrentBankAccounts &accs, User user)
 {
     Paybill paybill(accs, user);
     return paybill.RunPaybill();
 }
 
 // Transfer
-Transaction TransactionTransfer(CurrentBankAccounts accs, User user)
+Transaction TransactionTransfer(CurrentBankAccounts &accs, User user)
 {
     Transfer transfer(accs, user);
     return transfer.RunTransfer();
 }
 
 // Change Plan
-Transaction TransactionChangePlan(CurrentBankAccounts accs, User user)
+Transaction TransactionChangePlan(CurrentBankAccounts &accs, User user)
 {
     ChangePlan changePlan(accs, user);
     return changePlan.RunChangePlan();
 }
 
 // Delete
-Transaction TransactionDelete(CurrentBankAccounts accs, User user)
+Transaction TransactionDelete(CurrentBankAccounts &accs, User user)
 {
     Delete del(accs, user);
     return del.RunDelete();
@@ -94,14 +94,14 @@ Transaction TransactionCreate(CurrentBankAccounts accs, User user)
 }
 
 // Disable
-Transaction TransactionDisable(CurrentBankAccounts accs, User user)
+Transaction TransactionDisable(CurrentBankAccounts &accs, User user)
 {
     Disable disable(accs, user);
     return disable.RunDisable();
 }
 
 // Withdraw
-Transaction TransactionWithdraw(CurrentBankAccounts accs, User user)
+Transaction TransactionWithdraw(CurrentBankAccounts &accs, User user)
 {
     Withdraw withdraw(accs, user);
     return withdraw.RunWithdrawal();
@@ -124,7 +124,7 @@ int TransactionLogout(BankAccountTransaction trans)
 // ----------------------------------------------
 
 // Selection Menus
-tuple<Transaction, int> AdminMenu(User user, CurrentBankAccounts accs, BankAccountTransaction sessionTransactions)
+tuple<Transaction, int> AdminMenu(User user, CurrentBankAccounts &accs, BankAccountTransaction sessionTransactions)
 {
     Transaction transaction;
     // Display menu for admin user
@@ -267,7 +267,7 @@ tuple<Transaction, int> StandardMenu(User user, CurrentBankAccounts accs, BankAc
     return {transaction, runSession};
 }
 
-tuple<Transaction, int> Menu(User user, CurrentBankAccounts accs, BankAccountTransaction sessionTransactions)
+tuple<Transaction, int> Menu(User user, CurrentBankAccounts &accs, BankAccountTransaction sessionTransactions)
 {
     Transaction transaction;
     int runSession = 1;
@@ -315,6 +315,13 @@ void SelectionScreen(string curretBankAccountFileName, string transactionFileNam
             Transaction transaction;
             // Menu
             tie(transaction, runSession) = Menu(user, accs, sessionTransactions);
+
+            // Clear any bad inputs
+            if (!cin)
+            {
+                cin.clear();
+                cin.ignore(numeric_limits<std::streamsize>::max(), '\n');
+            }
 
             // Add valid transaction to transaction list
             if (!transaction.accountHolderName.empty())

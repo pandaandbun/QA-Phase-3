@@ -12,11 +12,15 @@ class ChangePlan
 {
 private:
     BankAccount acc;
-    CurrentBankAccounts currAccounts;
+    CurrentBankAccounts &currAccounts;
     User currUser;
 
 public:
-    ChangePlan(CurrentBankAccounts currAccounts, User currUser);
+    ChangePlan(CurrentBankAccounts &currAccounts, User currUser)
+        : currAccounts(currAccounts)
+    {
+        this->currUser = currUser;
+    }
 
     Transaction RunChangePlan();
     Transaction SaveTransaction();

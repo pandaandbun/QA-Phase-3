@@ -12,11 +12,15 @@ class Delete
 {
 private:
     BankAccount acc;
-    CurrentBankAccounts currAccounts;
+    CurrentBankAccounts &currAccounts;
     User currUser;
 
 public:
-    Delete(CurrentBankAccounts currAccounts, User currUser);
+    Delete(CurrentBankAccounts &currAccounts, User currUser)
+        : currAccounts(currAccounts)
+    {
+        this->currUser = currUser;
+    }
 
     Transaction RunDelete();
     Transaction SaveTransaction();

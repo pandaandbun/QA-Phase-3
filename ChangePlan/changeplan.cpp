@@ -1,11 +1,6 @@
 #include "changeplan.h"
 
-ChangePlan::ChangePlan(CurrentBankAccounts currAccounts, User currUser)
-{
-    this->currAccounts = currAccounts;
-    this->currUser = currUser;
-}
-
+// This is where everything is run
 Transaction ChangePlan::RunChangePlan()
 {
     if (currUser.isAdmin)
@@ -33,6 +28,7 @@ Transaction ChangePlan::RunChangePlan()
     return temp;
 }
 
+// Enter account holder name
 int ChangePlan::EnterAccountHolderName()
 {
     cout << "Enter Account Holder Name:" << endl;
@@ -40,6 +36,7 @@ int ChangePlan::EnterAccountHolderName()
     return 1;
 }
 
+// Enter account number
 int ChangePlan::EnterAccountNumber()
 {
     cout << "Enter Account Number:" << endl;
@@ -47,6 +44,7 @@ int ChangePlan::EnterAccountNumber()
     return 1;
 }
 
+// Enter account plan
 int ChangePlan::EnterAccountPlan()
 {
     cout << "Enter Account Plan:" << endl;
@@ -54,6 +52,7 @@ int ChangePlan::EnterAccountPlan()
     return 1;
 }
 
+// Check if account is valid
 int ChangePlan::CheckValidAccount()
 {
     for (int i = 0; i < currAccounts.accounts.size(); i++)
@@ -77,6 +76,7 @@ int ChangePlan::CheckValidAccount()
     return 0;
 }
 
+// Check if plan is valid
 int ChangePlan::CheckValidPlan()
 {
     if (acc.accountPlan == "SP" || acc.accountPlan == "NP")
@@ -103,6 +103,7 @@ int ChangePlan::ChangeAccount()
     return 1;
 }
 
+// Save transaction
 Transaction ChangePlan::SaveTransaction()
 {
     Transaction transaction(8, acc.accountHolderName, acc.accountNumber, 0, acc.accountPlan);
