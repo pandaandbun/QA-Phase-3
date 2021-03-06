@@ -13,7 +13,9 @@ public:
     int bankAccountNumber;
     string userName;
     bool isAdmin;
+    
     int isValidName(string name);
+    int isValidAccountNumber(int accNumber);
 };
 
 // Login class that facilitate and validate login

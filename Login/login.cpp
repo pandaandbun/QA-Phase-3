@@ -25,6 +25,18 @@ int User::isValidName(string name)
     return 1;
 }
 
+int User::isValidAccountNumber(int accNumber)
+{
+
+    // Check if number is larger then 5 digits or a negative number
+    if (accNumber < 0 || accNumber >= 99999)
+    {
+        return 0;
+    }
+
+    return 1;
+}
+
 // ----------------------------------------
 // 0 - Error
 // 1 - Success
