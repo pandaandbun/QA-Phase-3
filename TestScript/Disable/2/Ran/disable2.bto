@@ -17,13 +17,10 @@ MAIN MENU (Admin Privileges ON)
 0. Logout
 
 Enter Selection: 
-Enter Your Name:
-Hi John
-Enter your account number:
+Enter Account Holder Name:
+Enter Account Number:
 Account Found!
-Enter the amount to withdraw:
-Account Updated
-Payment Successful!
+Account Disable
 Receipt Saved!
 
 MAIN MENU (Admin Privileges ON)

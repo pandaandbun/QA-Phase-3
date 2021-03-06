@@ -1,0 +1,15 @@
+1/
+ETF Diff Check
+Files 1/Ran/deposit1.etf and 1/Expected/deposit1.etf are identical
+ETF Diff Check
+Files 1/Ran/deposit1.bto and 1/Expected/deposit1.bto are identical
+2/
+ETF Diff Check
+Files 2/Ran/deposit2.etf and 2/Expected/deposit2.etf are identical
+ETF Diff Check
+Files 2/Ran/deposit2.bto and 2/Expected/deposit2.bto are identical
+3/
+ETF Diff Check
+Files 3/Ran/deposit3.etf and 3/Expected/deposit3.etf are identical
+ETF Diff Check
+Files 3/Ran/deposit3.bto and 3/Expected/deposit3.bto are identical

@@ -26,10 +26,7 @@ Transaction Deposit::RunDeposit()
     {
         if (EnterAmount())
         {
-            if (UpdateAccount())
-            {
-                return SaveTransaction();
-            }
+            return SaveTransaction();
         }
     }
 
@@ -78,14 +75,14 @@ int Deposit::EnterAccountNumber()
         }
     }
 
-    cout << "Acount Not Found" << endl;
+    cout << "Account Not Found" << endl;
     return 0;
 }
 
 // Enter the amount you are depositing
 int Deposit::EnterAmount()
 {
-    cout << "Enter the ammount to be deposit:" << endl;
+    cout << "Enter the amount to be deposit:" << endl;
     cin >> depositAmount;
 
     if (depositAmount < 0)
@@ -103,16 +100,17 @@ int Deposit::EnterAmount()
         cout << "ERROR: Value Error - withdraw more than $500!" << endl;
         return 0;
     }
-    // else if (depositAmount > acc.accountBalance)
-    // {
-    //     cout << "ERROR: Value Error - withdraw value exceeds account balance!" << endl;
-    //     return 0;
-    // }
+    else if (depositAmount > acc.accountBalance)
+    {
+         cout << "ERROR: Value Error - withdraw value exceeds account balance!" << endl;
+         return 0;
+    }
     else
     {
         acc.accountBalance += depositAmount;
         UpdateAccount();
         cout << "Payment Successful!" << endl;
+        return 1;
     }
 
     cout << "Payment Successful!" << endl;

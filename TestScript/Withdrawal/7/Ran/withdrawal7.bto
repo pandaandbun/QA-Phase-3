@@ -22,7 +22,9 @@ Hi John
 Enter your account number:
 Account Found!
 Enter the amount to withdraw:
-Error: Value Error - withdraw value cannot exceed $99999.00!
+Account Updated
+Payment Successful!
+Receipt Saved!
 
 MAIN MENU (Admin Privileges ON)
 ==============================
