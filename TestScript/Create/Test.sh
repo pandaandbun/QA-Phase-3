@@ -5,11 +5,16 @@
 > Test_Result.txt
 
 # Run make
-# make -f ../../Makefile || exit
 find ../../ -type f -name Makefile -execdir make \;
+
+# Copying the master bank account file
+master="../../currentbankaccountfile.txt"
+copy="./currentbankaccountfile.txt"
+cp -r $master $copy
 
 # Loop through all test folders
 for folder_name in */; do
+
     # Test number and name
     test_number=${folder_name%/}
     test_name=create$test_number
@@ -23,7 +28,7 @@ for folder_name in */; do
     echo "Run test " $test_number
 
     # Run test
-    ../../bank ../../currentbankaccountfile.txt $test_number/Ran/$etf < $test_number/Expected/$inp > $test_number/Ran/$bto
+    ../../bank $copy $test_number/Ran/$etf < $test_number/Expected/$inp > $test_number/Ran/$bto
 
     # Compare results
     # Actual outputs
@@ -33,7 +38,7 @@ for folder_name in */; do
     expected_etf=$test_number/Expected/$etf
     expected_bto=$test_number/Expected/$bto
 
-    echo "Run test " ${folder_name:0:1} >> Test_Result.txt
+    echo "Run test " $test_number >> Test_Result.txt
 
     # ETF differences
     echo "ETF"

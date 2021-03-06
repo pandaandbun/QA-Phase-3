@@ -11,10 +11,11 @@ using namespace std;
 class Paybill
 {
 private:
-    string companyName;
-    float amountPaid;
+    BankAccount acc;
     CurrentBankAccounts currAccounts;
+    string companyName;
     User currUser;
+    float amountPaid;
 
 public:
     Paybill(CurrentBankAccounts currAccounts, User currUser);
@@ -26,4 +27,6 @@ public:
     int EnterAccountNumber();
     int SelectCompany();
     int EnterAmount();
+    int UpdateAccount();
+    int CheckAccountBalance();
 };
