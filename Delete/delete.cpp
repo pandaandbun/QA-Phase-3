@@ -77,13 +77,13 @@ int Delete::CheckValidAccount()
 
 int Delete::CheckValidBalance()
 {
-    if (acc.accountBalance == 0)
+    if (acc.accountBalance > 0)
     {
         cout << "Invalid Balance" << endl;
-        return 1;
+        return 0;
     }
     else{
-        return 0;
+        return 1;
     }
 }
 
