@@ -95,16 +95,6 @@ int Deposit::EnterAmount()
         cout << "Error: Value Error - deposit value cannot exceed $99999.00!" << endl;
         return 0;
     }
-    else if (depositAmount > 500.00 && !currUser.isAdmin)
-    {
-        cout << "ERROR: Value Error - withdraw more than $500!" << endl;
-        return 0;
-    }
-    else if (depositAmount > acc.accountBalance)
-    {
-         cout << "ERROR: Value Error - withdraw value exceeds account balance!" << endl;
-         return 0;
-    }
     else
     {
         acc.accountBalance += depositAmount;
