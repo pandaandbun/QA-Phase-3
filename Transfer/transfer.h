@@ -11,6 +11,8 @@ using namespace std;
 class Transfer
 {
 private:
+    BankAccount fromAcc;
+    BankAccount toAcc;
     int fromAccountNumber;
     int toAccountNumber;
     float transferAmount;
@@ -28,7 +30,9 @@ public:
     Transaction SaveTransaction();
 
     int AdminName();
+    int isValidName(string name);
     int FromAccountNumber();
     int ToAccountNumber();
     int EnterAmount();
+    int UpdateAccount();
 };
