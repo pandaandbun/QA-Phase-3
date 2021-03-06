@@ -1,6 +1,10 @@
 Run test  1
 ETF
 BTO
+5c5
+< Hi Dis One
+---
+> Hi Del One
 
 Run test  2
 ETF
@@ -24,5 +28,25 @@ BTO
 
 Run test  7
 ETF
+2d1
+< 07 Dis Seven            70007 00000.00 00
 BTO
+41,55c41
+< Account Found!
+< Account Disable
+< Receipt Saved!
+< 
+< MAIN MENU (Admin Privileges ON)
+< ==============================
+< 1. Withdrawal
+< 2. Transfer
+< 3. Pay Bill
+< 4. Deposit
+< 5. Create
+< 6. Delete
+< 7. Disable
+< 8. Change Plan
+< 0. Logout
+---
+> Account Disabled!
 
