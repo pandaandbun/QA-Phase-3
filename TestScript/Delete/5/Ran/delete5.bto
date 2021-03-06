@@ -1,0 +1,38 @@
+Welcome to the banking system
+Enter session type: (admin / standard)
+Login Accepted!
+…...Please wait while we load Current Bank Accounts……
+Success! Please have a great time Banking with us
+
+MAIN MENU (Admin Privileges ON)
+==============================
+1. Withdrawal
+2. Transfer
+3. Pay Bill
+4. Deposit
+5. Create
+6. Delete
+7. Disable
+8. Change Plan
+0. Logout
+
+Enter Selection: 
+Enter Account Holder Name:
+Enter Account Number:
+Account Found!
+
+MAIN MENU (Admin Privileges ON)
+==============================
+1. Withdrawal
+2. Transfer
+3. Pay Bill
+4. Deposit
+5. Create
+6. Delete
+7. Disable
+8. Change Plan
+0. Logout
+
+Enter Selection: 
+Transaction Saved
+Session Terminated

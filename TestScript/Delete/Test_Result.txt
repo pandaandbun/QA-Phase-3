@@ -1,6 +1,10 @@
 Run test  1/test_number
 ETF
+0a1
+> 06 Gone Once            60001 00000.00 00
 BTO
+22a23
+> Receipt Saved!
 
 Run test  2/test_number
 ETF
@@ -17,4 +21,6 @@ BTO
 Run test  5/test_number
 ETF
 BTO
+22a23
+> Invalid Balance
 
