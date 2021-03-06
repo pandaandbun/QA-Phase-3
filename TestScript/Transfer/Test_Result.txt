@@ -1,0 +1,40 @@
+1/
+ETF Diff Check
+Files 1/Ran/transfer1.etf and 1/Expected/transfer1.etf are identical
+ETF Diff Check
+Files 1/Ran/transfer1.bto and 1/Expected/transfer1.bto are identical
+2/
+ETF Diff Check
+Files 2/Ran/transfer2.etf and 2/Expected/transfer2.etf are identical
+ETF Diff Check
+Files 2/Ran/transfer2.bto and 2/Expected/transfer2.bto are identical
+3/
+ETF Diff Check
+Files 3/Ran/transfer3.etf and 3/Expected/transfer3.etf are identical
+ETF Diff Check
+Files 3/Ran/transfer3.bto and 3/Expected/transfer3.bto are identical
+4/
+ETF Diff Check
+Files 4/Ran/transfer4.etf and 4/Expected/transfer4.etf are identical
+ETF Diff Check
+Files 4/Ran/transfer4.bto and 4/Expected/transfer4.bto are identical
+5/
+ETF Diff Check
+Files 5/Ran/transfer5.etf and 5/Expected/transfer5.etf are identical
+ETF Diff Check
+Files 5/Ran/transfer5.bto and 5/Expected/transfer5.bto are identical
+6/
+ETF Diff Check
+Files 6/Ran/transfer6.etf and 6/Expected/transfer6.etf are identical
+ETF Diff Check
+Files 6/Ran/transfer6.bto and 6/Expected/transfer6.bto are identical
+7/
+ETF Diff Check
+Files 7/Ran/transfer7.etf and 7/Expected/transfer7.etf are identical
+ETF Diff Check
+Files 7/Ran/transfer7.bto and 7/Expected/transfer7.bto are identical
+8/
+ETF Diff Check
+Files 8/Ran/transfer8.etf and 8/Expected/transfer8.etf are identical
+ETF Diff Check
+Files 8/Ran/transfer8.bto and 8/Expected/transfer8.bto are identical
