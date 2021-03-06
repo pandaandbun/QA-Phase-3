@@ -1,14 +1,18 @@
 Run test  1
 ETF
 BTO
-5c5
-< Hi Dis One
----
-> Hi Del One
 
 Run test  2
 ETF
+0a1
+> 07 Dis Two              70002 00000.00 00
 BTO
+22c22,24
+< Account Disabled!
+---
+> Account Found!
+> Account Disable
+> Receipt Saved!
 
 Run test  3
 ETF
@@ -20,21 +24,40 @@ BTO
 
 Run test  5
 ETF
+0a1
+> 07 Dis Five             70005 00000.00 00
 BTO
+22c22,24
+< Account Disabled!
+---
+> Account Found!
+> Account Disable
+> Receipt Saved!
 
 Run test  6
 ETF
+0a1
+> 07 Dis Six              70006 00000.00 00
 BTO
+22c22,24
+< Account Disabled!
+---
+> Account Found!
+> Account Disable
+> Receipt Saved!
 
 Run test  7
 ETF
-2d1
-< 07 Dis Seven            70007 00000.00 00
+0a1
+> 07 Dis Seven            70007 00000.00 00
 BTO
-41,55c41
-< Account Found!
-< Account Disable
-< Receipt Saved!
+22c22,24
+< Account Disabled!
+---
+> Account Found!
+> Account Disable
+> Receipt Saved!
+40,51d41
 < 
 < MAIN MENU (Admin Privileges ON)
 < ==============================
@@ -47,6 +70,4 @@ BTO
 < 7. Disable
 < 8. Change Plan
 < 0. Logout
----
-> Account Disabled!
 
