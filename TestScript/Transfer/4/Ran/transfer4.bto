@@ -20,7 +20,8 @@ Account Found!
 Enter the account number you want to transfer to:
 Account Found!
 Enter the amount of money to transfer:
-ERROR: Value Error - transfer value exceeds account balance!
+Transfer Successful!
+Receipt Saved!
 
 MAIN MENU
 ===========

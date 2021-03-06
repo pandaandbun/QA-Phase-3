@@ -15,9 +15,10 @@ ETF Diff Check
 Files 3/Ran/transfer3.bto and 3/Expected/transfer3.bto are identical
 4/
 ETF Diff Check
-Files 4/Ran/transfer4.etf and 4/Expected/transfer4.etf are identical
+02 Moore                04251 00500.00 CR		      <
 ETF Diff Check
-Files 4/Ran/transfer4.bto and 4/Expected/transfer4.bto are identical
+Transfer Successful!					      |	ERROR: Value Error - transfer value exceeds account balance!
+Receipt Saved!						      <
 5/
 ETF Diff Check
 Files 5/Ran/transfer5.etf and 5/Expected/transfer5.etf are identical
