@@ -1,0 +1,40 @@
+Welcome to the banking system
+Enter session type: (admin / standard)
+Login Accepted!
+Enter Your Name:
+Hi Major Cream
+…...Please wait while we load Current Bank Accounts……
+Success! Please have a great time Banking with us
+
+MAIN MENU
+===========
+1. Withdrawal
+2. Transfer
+3. Pay Bill
+4. Deposit
+0. Logout
+
+Enter Selection: 
+Enter your account number:
+Account Found!
+
+The Bright Light Electric Company (EC)
+Credit Card Company Q (CQ)
+Fast Internet, Inc. (FI)
+
+Enter the company shorthand you want to pay: 
+Company Found!
+Enter the ammount to be paid:
+Error: Value Error - cannot Paybill less than $0!
+
+MAIN MENU
+===========
+1. Withdrawal
+2. Transfer
+3. Pay Bill
+4. Deposit
+0. Logout
+
+Enter Selection: 
+Transaction Saved
+Session Terminated

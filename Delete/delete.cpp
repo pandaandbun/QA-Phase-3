@@ -20,8 +20,11 @@ Transaction Delete::RunDelete()
             {
                 if (CheckValidAccount())
                 {
-                    DeleteAccount();
-                    return SaveTransaction();
+                    if (CheckValidBalance())
+                    {
+                        DeleteAccount();
+                        return SaveTransaction();
+                    }
                 }
             }
         }
@@ -58,6 +61,11 @@ int Delete::CheckValidAccount()
 
         if (acc.accountNumber == currAccNum && acc.accountHolderName == currAccName)
         {
+            if (currAccounts.accounts[i].accountStatus == "D")
+            {
+                cout << "Account Disabled!" << endl;
+                return 0;
+            }
             cout << "Account Found!" << endl;
             return 1;
         }
@@ -65,6 +73,18 @@ int Delete::CheckValidAccount()
 
     cout << "Account Not Found" << endl;
     return 0;
+}
+
+int Delete::CheckValidBalance()
+{
+    if (acc.accountBalance == 0)
+    {
+        cout << "Invalid Balance" << endl;
+        return 1;
+    }
+    else{
+        return 0;
+    }
 }
 
 // Delete account

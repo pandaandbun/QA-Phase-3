@@ -25,4 +25,5 @@ public:
     int EnterAccountHolderName();
     int EnterAccountNumber();
     int CheckValidAccount();
+    int CheckValidBalance();
 };
