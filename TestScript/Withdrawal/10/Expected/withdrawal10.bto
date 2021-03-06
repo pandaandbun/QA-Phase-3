@@ -15,16 +15,14 @@ MAIN MENU (Admin Privileges ON)
 7. Disable
 8. Change Plan
 0. Logout
-
+ 
 Enter Selection: 
 Enter Your Name:
 Hi John
 Enter your account number:
 Account Found!
 Enter the amount to withdraw:
-Account Updated
-Payment Successful!
-Receipt Saved!
+ERROR: Value Error - withdraw value exceeds account balance!
 
 MAIN MENU (Admin Privileges ON)
 ==============================
@@ -37,7 +35,7 @@ MAIN MENU (Admin Privileges ON)
 7. Disable
 8. Change Plan
 0. Logout
-
+ 
 Enter Selection: 
 Transaction Saved
 Session Terminated

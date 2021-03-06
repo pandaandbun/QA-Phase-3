@@ -2,7 +2,7 @@ Welcome to the banking system
 Enter session type: (admin / standard)
 Login Accepted!
 Enter Your Name:
-Hi John
+Hi Moore
 …...Please wait while we load Current Bank Accounts……
 Success! Please have a great time Banking with us
 
@@ -18,7 +18,7 @@ Enter Selection:
 Enter your account number:
 Account Found!
 Enter the amount to withdraw:
-Error: Value Error - cannot withdraw less than $0!
+ERROR: Value Error - withdraw value exceeds account balance!
 
 MAIN MENU
 ===========

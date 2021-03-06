@@ -3,6 +3,16 @@ ETF Diff Check
 Files 1/Ran/withdrawal1.etf and 1/Expected/withdrawal1.etf are identical
 ETF Diff Check
 Files 1/Ran/withdrawal1.bto and 1/Expected/withdrawal1.bto are identical
+10/
+ETF Diff Check
+Files 10/Ran/withdrawal10.etf and 10/Expected/withdrawal10.etf are identical
+ETF Diff Check
+Files 10/Ran/withdrawal10.bto and 10/Expected/withdrawal10.bto are identical
+11/
+ETF Diff Check
+Files 11/Ran/withdrawal11.etf and 11/Expected/withdrawal11.etf are identical
+ETF Diff Check
+Files 11/Ran/withdrawal11.bto and 11/Expected/withdrawal11.bto are identical
 2/
 ETF Diff Check
 Files 2/Ran/withdrawal2.etf and 2/Expected/withdrawal2.etf are identical
@@ -35,8 +45,11 @@ ETF Diff Check
 Files 7/Ran/withdrawal7.bto and 7/Expected/withdrawal7.bto are identical
 8/
 ETF Diff Check
-01 John                 56789 99999.00 CR		      <
+Files 8/Ran/withdrawal8.etf and 8/Expected/withdrawal8.etf are identical
 ETF Diff Check
-Account Updated						      |	ERROR: Value Error - withdraw value exceeds account balance!
-Payment Successful!					      <
-Receipt Saved!						      <
+Files 8/Ran/withdrawal8.bto and 8/Expected/withdrawal8.bto are identical
+9/
+ETF Diff Check
+Files 9/Ran/withdrawal9.etf and 9/Expected/withdrawal9.etf are identical
+ETF Diff Check
+Files 9/Ran/withdrawal9.bto and 9/Expected/withdrawal9.bto are identical
