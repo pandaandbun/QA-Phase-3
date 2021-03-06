@@ -13,3 +13,46 @@ ETF Diff Check
 Files 3/Ran/deposit3.etf and 3/Expected/deposit3.etf are identical
 ETF Diff Check
 Files 3/Ran/deposit3.bto and 3/Expected/deposit3.bto are identical
+4/
+ETF Diff Check
+Files 4/Ran/deposit4.etf and 4/Expected/deposit4.etf are identical
+ETF Diff Check
+Files 4/Ran/deposit4.bto and 4/Expected/deposit4.bto are identical
+5/
+ETF Diff Check
+Files 5/Ran/deposit5.etf and 5/Expected/deposit5.etf are identical
+ETF Diff Check
+Files 5/Ran/deposit5.bto and 5/Expected/deposit5.bto are identical
+6/
+ETF Diff Check
+Files 6/Ran/deposit6.etf and 6/Expected/deposit6.etf are identical
+ETF Diff Check
+Command not recognized					      <
+							      <
+MAIN MENU (Admin Privileges ON)				      <
+==============================				      <
+1. Withdrawal						      <
+2. Transfer						      <
+3. Pay Bill						      <
+4. Deposit						      <
+5. Create						      <
+6. Delete						      <
+7. Disable						      <
+8. Change Plan						      <
+0. Logout						      <
+							      <
+Enter Selection: 					      <
+Hi 56789						      |	Hi John
+Account Not Found					      |	Account Found!
+							      >	Enter the amount to be deposit:
+							      >	Error: Value Error - cannot deposit less than $0!
+7/
+ETF Diff Check
+Files 7/Ran/deposit7.etf and 7/Expected/deposit7.etf are identical
+ETF Diff Check
+Files 7/Ran/deposit7.bto and 7/Expected/deposit7.bto are identical
+8/
+ETF Diff Check
+Files 8/Ran/deposit8.etf and 8/Expected/deposit8.etf are identical
+ETF Diff Check
+Files 8/Ran/deposit8.bto and 8/Expected/deposit8.bto are identical
