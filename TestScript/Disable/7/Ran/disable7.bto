@@ -19,7 +19,9 @@ MAIN MENU (Admin Privileges ON)
 Enter Selection: 
 Enter Account Holder Name:
 Enter Account Number:
-Account Not Found
+Account Found!
+Account Disable
+Receipt Saved!
 
 MAIN MENU (Admin Privileges ON)
 ==============================
@@ -36,7 +38,7 @@ MAIN MENU (Admin Privileges ON)
 Enter Selection: 
 Enter Account Holder Name:
 Enter Account Number:
-Account Not Found
+Account Disabled!
 
 MAIN MENU (Admin Privileges ON)
 ==============================

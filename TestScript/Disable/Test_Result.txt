@@ -4,15 +4,7 @@ BTO
 
 Run test  2
 ETF
-0a1
-> 07 Dis Two              70002 00000.00 00
 BTO
-22c22,24
-< Account Not Found
----
-> Account Found!
-> Account Disable
-> Receipt Saved!
 
 Run test  3
 ETF
@@ -21,44 +13,7 @@ BTO
 Run test  4
 ETF
 BTO
-
-Run test  5
-ETF
-0a1
-> 07 Dis Five             70005 00000.00 00
-BTO
-22c22,24
-< Account Not Found
----
-> Account Found!
-> Account Disable
-> Receipt Saved!
-
-Run test  6
-ETF
-0a1
-> 07 Dis Six              70006 00000.00 00
-BTO
-22c22,24
-< Account Not Found
----
-> Account Found!
-> Account Disable
-> Receipt Saved!
-
-Run test  7
-ETF
-0a1
-> 07 Dis Seven            70007 00000.00 00
-BTO
-22c22,24
-< Account Not Found
----
-> Account Found!
-> Account Disable
-> Receipt Saved!
-39,51c41
-< Account Not Found
+21,35c21,22
 < 
 < MAIN MENU (Admin Privileges ON)
 < ==============================
@@ -71,6 +26,35 @@ BTO
 < 7. Disable
 < 8. Change Plan
 < 0. Logout
+< 
+< Enter Selection: 
+< Command not recognized
 ---
-> Account Disabled!
+> Enter Account Number:
+> Account Not Found
+
+Run test  5
+ETF
+BTO
+
+Run test  6
+ETF
+BTO
+
+Run test  7
+ETF
+BTO
+43,54d42
+< MAIN MENU (Admin Privileges ON)
+< ==============================
+< 1. Withdrawal
+< 2. Transfer
+< 3. Pay Bill
+< 4. Deposit
+< 5. Create
+< 6. Delete
+< 7. Disable
+< 8. Change Plan
+< 0. Logout
+< 
 

@@ -31,8 +31,16 @@ Transaction Delete::RunDelete()
 int Delete::EnterAccountHolderName()
 {
     cout << "Enter Account Holder Name:" << endl;
-    getline(cin >> ws, acc.accountHolderName);
-    return 1;
+    getline(cin >> ws, currUser.userName);
+
+    // Check if name is valid
+    if (currUser.isValidName(currUser.userName)) 
+    {
+        acc.accountHolderName = currUser.userName;
+        return 1;
+    }
+    
+    return 0;
 }
 
 // Enter account number
@@ -40,7 +48,15 @@ int Delete::EnterAccountNumber()
 {
 
     cout << "Enter Account Number:" << endl;
-    cin >> acc.accountNumber;
+    cin >> currUser.bankAccountNumber;
+
+    // Check if account number is valid
+    if (currUser.isValidAccountNumber(currUser.bankAccountNumber)) 
+    {
+        acc.accountNumber = currUser.bankAccountNumber;
+        return 1;
+    }
+
     return 1;
 }
 
@@ -92,7 +108,7 @@ int Delete::DeleteAccount()
 // Save this transaction
 Transaction Delete::SaveTransaction()
 {
-    Transaction transaction(6, acc.accountHolderName, acc.accountNumber, 0, "00");
+    Transaction transaction(6, currUser.userName, currUser.bankAccountNumber, 0, "00");
     cout << "Receipt Saved!" << endl;
     return transaction;
 }
