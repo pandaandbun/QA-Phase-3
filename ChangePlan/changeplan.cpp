@@ -41,6 +41,7 @@ int ChangePlan::EnterAccountHolderName()
         return 1;
     }
 
+    cout << "Name is invalid" << endl;
     return 0;
 }
 
@@ -57,7 +58,8 @@ int ChangePlan::EnterAccountNumber()
         return 1;
     }
 
-    return 1;
+    cout << "Account number is invalid" << endl;
+    return 0;
 }
 
 // Enter account plan
@@ -112,7 +114,8 @@ int ChangePlan::ChangeAccount()
         acc.accountPlan = "NP";
     }
     else if (acc.accountPlan == "NP") {
-        cout << "No change was made to payment plan" << endl;
+        cout << "Set payment plan from non-student (NP) to student (SP)" << endl;
+        acc.accountPlan = "SP";
     }
     cout << "Account Change" << endl;
 

@@ -37,7 +37,7 @@ for folder_name in */; do
     expected_etf=$test_number/Expected/$etf
     expected_bto=$test_number/Expected/$bto
 
-    echo "Run test " ${folder_name}test_number >> Test_Result.txt
+    echo "Run test " ${test_number} >> Test_Result.txt
 
     # ETF differences
     echo "ETF"

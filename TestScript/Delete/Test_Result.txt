@@ -1,20 +1,28 @@
-Run test  1/test_number
+Run test  1
 ETF
 BTO
 
-Run test  2/test_number
+Run test  2
 ETF
 BTO
 
-Run test  3/test_number
+Run test  3
 ETF
 BTO
 
-Run test  4/test_number
+Run test  4
 ETF
 BTO
 
-Run test  5/test_number
+Run test  5
+ETF
+BTO
+
+Run test  6
+ETF
+BTO
+
+Run test  7
 ETF
 BTO
 

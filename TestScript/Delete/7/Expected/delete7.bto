@@ -20,7 +20,7 @@ Enter Selection:
 Enter Account Holder Name:
 Enter Account Number:
 Account Found!
-Account Disable
+Account Deleted
 Receipt Saved!
 
 MAIN MENU (Admin Privileges ON)
@@ -37,9 +37,9 @@ MAIN MENU (Admin Privileges ON)
 
 Enter Selection: 
 Enter Your Name:
-Hi Dis Seven
+Hi Gone Thrice
 Enter your account number:
-Account Disabled!
+Acount Not Found
 
 MAIN MENU (Admin Privileges ON)
 ==============================

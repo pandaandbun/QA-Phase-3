@@ -35,6 +35,7 @@ int Disable::EnterAccountHolderName()
         return 1;
     }
 
+    cout << "Name is invalid" << endl;
     return 0;
 }
 
@@ -45,13 +46,14 @@ int Disable::EnterAccountNumber()
     cin >> currUser.bankAccountNumber;
 
     // Check if account number is valid
-    if (currUser.isValidAccountNumber(currUser.bankAccountNumber)) 
+    if (currUser.isValidAccountNumber(currUser.bankAccountNumber))
     {
         acc.accountNumber = currUser.bankAccountNumber;
         return 1;
     }
 
-    return 1;
+    cout << "Account number is invalid" << endl;
+    return 0;
 }
 
 // Check if the entered account is valid

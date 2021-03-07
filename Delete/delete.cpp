@@ -34,12 +34,13 @@ int Delete::EnterAccountHolderName()
     getline(cin >> ws, currUser.userName);
 
     // Check if name is valid
-    if (currUser.isValidName(currUser.userName)) 
+    if (currUser.isValidName(currUser.userName))
     {
         acc.accountHolderName = currUser.userName;
         return 1;
     }
-    
+
+    cout << "Name is invalid" << endl;
     return 0;
 }
 
@@ -51,13 +52,14 @@ int Delete::EnterAccountNumber()
     cin >> currUser.bankAccountNumber;
 
     // Check if account number is valid
-    if (currUser.isValidAccountNumber(currUser.bankAccountNumber)) 
+    if (currUser.isValidAccountNumber(currUser.bankAccountNumber))
     {
         acc.accountNumber = currUser.bankAccountNumber;
         return 1;
     }
 
-    return 1;
+    cout << "Account number is invalid" << endl;
+    return 0;
 }
 
 // Check if account is valid
@@ -67,6 +69,7 @@ int Delete::CheckValidAccount()
     {
         int currAccNum = currAccounts.accounts[i].accountNumber;
         string currAccName = currAccounts.accounts[i].accountHolderName;
+        float currBalance = currAccounts.accounts[i].accountBalance;
 
         if (acc.accountNumber == currAccNum && acc.accountHolderName == currAccName)
         {
@@ -75,8 +78,9 @@ int Delete::CheckValidAccount()
                 cout << "Account Disabled!" << endl;
                 return 0;
             }
-            
+
             cout << "Account Found!" << endl;
+            acc.accountBalance = currBalance;
             return 1;
         }
     }
@@ -92,9 +96,8 @@ int Delete::CheckValidBalance()
         cout << "Invalid Balance" << endl;
         return 0;
     }
-    else{
-        return 1;
-    }
+
+    return 1;
 }
 
 // Delete account

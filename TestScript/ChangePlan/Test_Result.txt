@@ -18,3 +18,7 @@ Run test  5/test_number
 ETF
 BTO
 
+Run test  6/test_number
+ETF
+BTO
+
