@@ -1,0 +1,35 @@
+Welcome to the banking system
+Enter session type: (admin / standard)
+Login Accepted!
+Enter Your Name:
+Hi John
+…...Please wait while we load Current Bank Accounts……
+Success! Please have a great time Banking with us
+
+MAIN MENU
+===========
+1. Withdrawal
+2. Transfer
+3. Pay Bill
+4. Deposit
+0. Logout
+
+Enter Selection: 
+Enter your account number:
+Account Found!
+Enter the account number you want to transfer to:
+Account Found!
+Enter the amount of money to transfer:
+Error: Value Error - transfer value cannot exceed $1000.00!
+
+MAIN MENU
+===========
+1. Withdrawal
+2. Transfer
+3. Pay Bill
+4. Deposit
+0. Logout
+
+Enter Selection: 
+Transaction Saved
+Session Terminated

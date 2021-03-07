@@ -8,16 +8,20 @@
 using namespace std;
 
 // Fulfill the Withdrawal Transaction
-class Withdraw
+class withdrawal
 {
 private:
     BankAccount acc;
-    CurrentBankAccounts currAccounts;
+    CurrentBankAccounts& currAccounts;
     User currUser;
     float amountWithdraw;
 
 public:
-    Withdraw(CurrentBankAccounts currAccounts, User currUser);
+    withdrawal(CurrentBankAccounts& currAccounts, User currUser)
+        : currAccounts(currAccounts)
+    {
+        this->currUser = currUser;
+    }
 
     Transaction RunWithdrawal();
     Transaction SaveTransaction();
@@ -26,4 +30,5 @@ public:
     int EnterAccountNumber();
     int EnterAmount();
     int UpdateAccount();
+    int CheckAccountBalance();
 };

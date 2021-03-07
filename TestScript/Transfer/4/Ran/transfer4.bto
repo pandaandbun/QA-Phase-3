@@ -2,7 +2,7 @@ Welcome to the banking system
 Enter session type: (admin / standard)
 Login Accepted!
 Enter Your Name:
-Hi Moore
+Hi John
 …...Please wait while we load Current Bank Accounts……
 Success! Please have a great time Banking with us
 
@@ -20,6 +20,7 @@ Account Found!
 Enter the account number you want to transfer to:
 Account Found!
 Enter the amount of money to transfer:
+Account Updated!
 Transfer Successful!
 Receipt Saved!
 

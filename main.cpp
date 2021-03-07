@@ -1,50 +1,3 @@
-// Tran Tien Anh Ta
-// 100648707
-
-/*
-Build & Run Instruction:
-    make
-    ./bank
---------------------------------------------------------------------------------------
-Overall steps:
-1. Run Login
-2. If Login is valid and a valid session was choosen then a selection screen is shown
-3. After Login, The currentbankaccountfile.txt is read and parse
-4. Each line is turn into a BankAccount instance. Each instance contains account number, name, status and balance.
-5. A while (1) loop is used for a repeating selection screen until the user logged out
-6. the selection screen is split into 2 cattegory (ADMIN and STANDARD)
-7. Admin screen contain a full menu
-8. Standard screen contain a limited menu
---------------------------------------------------------------------------------------
-Input: currentbankaccountfile.txt
-Output: a transaction file with timestamp of the time the file was created.
-
---------------------------------------------------------------------------------------
-A set of inputs you can run:
-1
-4
-Carl
-4449
-10.6
-0
---------------------------------------------------------------------------------------
-^ That should log you in as 
-1 - ADMIN 
-Select transaction 
-4 - Deposit
-Enter name
-Carl
-Enter account number
-4449
-Enter deposit amount
-10.6
-This should be the end of the transaction and bring you back the selection screen
-You can now log out
-0
-This should trigger the code to create a transaction file with the current timestamp as file name.
---------------------------------------------------------------------------------------
-*/
-
 #include <tuple>
 #include "./Login/login.h"
 #include "./Transfer/transfer.h"
@@ -53,7 +6,7 @@ This should trigger the code to create a transaction file with the current times
 #include "./Delete/delete.h"
 #include "./Create/create.h"
 #include "./Disable/disable.h"
-#include "./Withdraw/withdraw.h"
+#include "./Withdrawal/withdrawal.h"
 #include "./Deposit/deposit.h"
 #include "./CurrentBankAccounts/bankaccounts.h"
 #include "./Logout/logout.h"
@@ -100,11 +53,11 @@ Transaction TransactionDisable(CurrentBankAccounts &accs, User user)
     return disable.RunDisable();
 }
 
-// Withdraw
+// withdrawal
 Transaction TransactionWithdraw(CurrentBankAccounts &accs, User user)
 {
-    Withdraw withdraw(accs, user);
-    return withdraw.RunWithdrawal();
+    withdrawal withdrawal(accs, user);
+    return withdrawal.RunWithdrawal();
 }
 
 // Deposit

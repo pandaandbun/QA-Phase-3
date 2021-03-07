@@ -16,11 +16,7 @@ MAIN MENU
 
 Enter Selection: 
 Enter your account number:
-Account Found!
-Enter the account number you want to transfer to:
-Account Found!
-Enter the amount of money to transfer:
-Error: Value Error - cannot transfer less than $0!
+Account number is invalid
 
 MAIN MENU
 ===========

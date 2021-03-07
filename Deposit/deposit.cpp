@@ -39,8 +39,15 @@ int Deposit::AdminName()
     cout << "Enter Your Name:" << endl;
     getline(cin >> ws, currUser.userName);
 
-    cout << "Hi " << currUser.userName << endl;
-    return 1;
+    // Check if name is valid
+    if (currUser.isValidName(currUser.userName))
+    {
+        cout << "Hi " << currUser.userName << endl;
+        return 1;
+    }
+
+    cout << "Name is invalid" << endl;
+    return 0;
 }
 
 // Where user enter their account number
@@ -48,6 +55,13 @@ int Deposit::EnterAccountNumber()
 {
     cout << "Enter your account number:" << endl;
     cin >> acc.accountNumber;
+
+    // Check if account number is valid
+    if (!currUser.isValidAccountNumber(acc.accountNumber))
+    {
+        cout << "Account number is invalid" << endl;
+        return 0;
+    }
 
     // Validation of account number and account name
     for (int i = 0; i < currAccounts.accounts.size(); i++)
@@ -59,7 +73,6 @@ int Deposit::EnterAccountNumber()
 
         if (acc.accountNumber == currAccNum && currUser.userName == currAccName)
         {
-            currUser.bankAccountNumber = acc.accountNumber;
             if (currAccStatus == "D")
             {
                 cout << "Account Disabled!" << endl;
@@ -95,14 +108,9 @@ int Deposit::EnterAmount()
         cout << "Error: Value Error - deposit value cannot exceed $99999.00!" << endl;
         return 0;
     }
-    else
-    {
-        acc.accountBalance += depositAmount;
-        UpdateAccount();
-        cout << "Payment Successful!" << endl;
-        return 1;
-    }
 
+    acc.accountBalance += depositAmount;
+    UpdateAccount();
     cout << "Payment Successful!" << endl;
     return 1;
 }
@@ -118,7 +126,7 @@ int Deposit::UpdateAccount()
 // Save Transaction
 Transaction Deposit::SaveTransaction()
 {
-    Transaction transaction(4, currUser.userName, currUser.bankAccountNumber, depositAmount, "DR");
+    Transaction transaction(4, currUser.userName, acc.accountNumber, depositAmount, "DR");
 
     cout << "Receipt Saved!" << endl;
     return transaction;

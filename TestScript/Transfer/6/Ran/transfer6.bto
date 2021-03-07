@@ -16,7 +16,13 @@ MAIN MENU
 
 Enter Selection: 
 Enter your account number:
-Account Not Found
+Account Found!
+Enter the account number you want to transfer to:
+Account Found!
+Enter the amount of money to transfer:
+Account Updated!
+Transfer Successful!
+Receipt Saved!
 
 MAIN MENU
 ===========

@@ -2,7 +2,7 @@ Welcome to the banking system
 Enter session type: (admin / standard)
 Login Accepted!
 Enter Your Name:
-Hi John
+Hi Three Discovery
 …...Please wait while we load Current Bank Accounts……
 Success! Please have a great time Banking with us
 
@@ -16,9 +16,7 @@ MAIN MENU
 
 Enter Selection: 
 Enter your account number:
-Account Found!
-Enter the amount to be deposit:
-Error: Value Error - deposit value cannot exceed $99999.00!
+Account Disabled!
 
 MAIN MENU
 ===========

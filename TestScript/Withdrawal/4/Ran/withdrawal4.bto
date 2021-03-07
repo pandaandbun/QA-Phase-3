@@ -18,7 +18,9 @@ Enter Selection:
 Enter your account number:
 Account Found!
 Enter the amount to withdraw:
-Error: Value Error - cannot withdraw less than $0!
+Account Updated
+Payment Successful!
+Receipt Saved!
 
 MAIN MENU
 ===========

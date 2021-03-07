@@ -13,8 +13,6 @@ class Transfer
 private:
     BankAccount fromAcc;
     BankAccount toAcc;
-    int fromAccountNumber;
-    int toAccountNumber;
     float transferAmount;
     CurrentBankAccounts& currAccounts;
     User currUser;
@@ -34,5 +32,6 @@ public:
     int FromAccountNumber();
     int ToAccountNumber();
     int EnterAmount();
-    int UpdateAccount();
+    void UpdateAccount();
+    int CheckAccountBalance();
 };

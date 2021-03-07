@@ -2,7 +2,7 @@ Welcome to the banking system
 Enter session type: (admin / standard)
 Login Accepted!
 Enter Your Name:
-Hi Moore
+Hi John
 …...Please wait while we load Current Bank Accounts……
 Success! Please have a great time Banking with us
 
@@ -13,12 +13,14 @@ MAIN MENU
 3. Pay Bill
 4. Deposit
 0. Logout
- 
+
 Enter Selection: 
 Enter your account number:
 Account Found!
 Enter the amount to withdraw:
-ERROR: Value Error - withdraw value exceeds account balance!
+Account Updated
+Payment Successful!
+Receipt Saved!
 
 MAIN MENU
 ===========
@@ -27,7 +29,7 @@ MAIN MENU
 3. Pay Bill
 4. Deposit
 0. Logout
- 
+
 Enter Selection: 
 Transaction Saved
 Session Terminated

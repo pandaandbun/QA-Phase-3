@@ -15,14 +15,14 @@ MAIN MENU (Admin Privileges ON)
 7. Disable
 8. Change Plan
 0. Logout
- 
+
 Enter Selection: 
 Enter Your Name:
 Hi John
 Enter your account number:
 Account Found!
 Enter the amount to be deposit:
-Error: Value Error - deposit value cannot exceed $99999.00!
+Error: Value Error - cannot deposit less than $0!
 
 MAIN MENU (Admin Privileges ON)
 ==============================
@@ -35,7 +35,7 @@ MAIN MENU (Admin Privileges ON)
 7. Disable
 8. Change Plan
 0. Logout
- 
+
 Enter Selection: 
 Transaction Saved
 Session Terminated

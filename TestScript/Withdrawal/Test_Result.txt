@@ -10,11 +10,14 @@ ETF Diff Check
 Files 10/Ran/withdrawal10.bto and 10/Expected/withdrawal10.bto are identical
 11/
 ETF Diff Check
-01 Moore                04251 00500.00 CR		      <
+Files 11/Ran/withdrawal11.etf and 11/Expected/withdrawal11.etf are identical
 ETF Diff Check
-Account Updated						      |	ERROR: Value Error - withdraw value exceeds account balance!
-Payment Successful!					      <
-Receipt Saved!						      <
+Files 11/Ran/withdrawal11.bto and 11/Expected/withdrawal11.bto are identical
+12/
+ETF Diff Check
+Files 12/Ran/withdrawal12.etf and 12/Expected/withdrawal12.etf are identical
+ETF Diff Check
+Files 12/Ran/withdrawal12.bto and 12/Expected/withdrawal12.bto are identical
 2/
 ETF Diff Check
 Files 2/Ran/withdrawal2.etf and 2/Expected/withdrawal2.etf are identical
