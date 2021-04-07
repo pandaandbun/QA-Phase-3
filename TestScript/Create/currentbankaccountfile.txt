@@ -1,42 +1,37 @@
-70009_Gordon_Smith_________A_01657.67
-70008_Jack_Smith___________A_01657.67
-12345_John_Smith___________A_25641.26
-56789_John_________________A_10721.00
-54321_Major_Cream__________A_48566.00
-00360_Three_Discovery______D_16099.71
-05996_Modern_Skyline_______A_97806.12
-07298_Tilted_Horsemen______A_83811.16
-05346_Ancient_Sisters______D_89885.37
-09462_Brothers_Face________D_46667.08
-00853_Spurned_Widow________D_12305.67
-09047_Sticky_Boys__________D_34810.10
-05274_Sleazy_Pain__________A_23796.87
-04210_Flying_Attraction____D_17805.52
-07403_Empty_Surgery________D_40619.75
-04514_Daily_Vengeance______D_10156.54
-07217_Ancient_Division_____D_30559.08
-03239_Violent_Meeks________A_60276.61
-04500_Five_Behaviour_______A_43024.50
-02993_Disturbed_School_____D_25689.16
-03000_Green_Men____________D_86278.36
-07494_Quick_Meeks__________A_24898.98
-05991_Abusive_Generator____D_40567.34
-01527_Sacrifice_Division___A_90050.03
-01262_Ty_Shaffer___________D_63660.21
-00361_George_Ty____________A_39154.94
-08478_George_Wagner________D_36736.70
-04820_Jack_________________A_17000.76
-07887_Mark_________________D_11643.78
-04251_Moore________________A_50056.23
-05029_Reardon______________D_23895.80
-60001_Gone_Once____________A_00000.00
-60002_Gone_Twice___________A_10000.00
-60003_Gone_Thrice__________A_00000.00
-70001_Dis_One______________A_00000.00
-70002_Dis_Two______________A_00000.00
-70003_Dis_Three____________A_00000.00
-70004_Dis_Four_____________A_00000.00
-70005_Dis_Five_____________A_00000.00
-70006_Dis_Six______________D_00000.00
-70007_Dis_Seven____________A_00000.00
-00000_END_OF_FILE__________D_00000.00
+00360 Three Discovery      D 16099.71
+00361 George Ty            A 39154.94
+00853 Spurned Widow        D 12305.67
+01262 Ty Shaffer           D 63660.21
+01527 Sacrifice Division   D 90050.03
+02993 Disturbed School     B 25689.16
+03000 Green Men            D 86278.36
+03239 Violent Meeks        A 60276.61
+04210 Flying Attraction    C 17805.52
+04500 Five Behaviour       A 43024.50
+04514 Daily Vengeance      C 10156.54
+04820 Jack                 A 17000.76
+05029 Reardon              B 23895.80
+05274 Sleazy Pain          A 23796.87
+05346 Ancient Sisters      D 89885.37
+05996 Modern Skyline       A 97806.12
+07217 Ancient Division     D 30559.08
+07298 Tilted Horsemen      A 83811.16
+07403 Empty Surgery        D 40619.75
+07494 Quick Meeks          A 24898.98
+07887 Mark                 D 11643.78
+09047 Sticky Boys          D 34810.10
+12345 John Smith           A 26648.26
+54320 Test Constraint      B 00001.00
+54322 Test Create          A 00000.00
+56789 John                 A 09213.95
+60001 Gone Once            A 00000.00
+60002 Gone Twice           A 10000.00
+60003 Gone Thrice          A 00000.00
+70001 Dis One              A 00000.00
+70002 Dis Two              A 00000.00
+70003 Dis Three            A 00000.00
+70004 Dis Four             A 00000.00
+70005 Dis Five             A 00000.00
+70006 Dis Six              D 00000.00
+70007 Dis Seven            A 00000.00
+00000 END OF FILE          D 00000.00

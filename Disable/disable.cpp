@@ -67,7 +67,7 @@ int Disable::CheckValidAccount()
         if (acc.accountNumber == currAccNum && acc.accountHolderName == currAccName)
         {
             // Check for disable acount
-            if (currAccounts.accounts[i].accountStatus == "D")
+            if (currAccounts.accounts[i].accountStatus == "D" || currAccounts.accounts[i].accountStatus == "C")
             {
                 cout << "Account Disabled!" << endl;
                 return 0;
@@ -85,7 +85,7 @@ int Disable::CheckValidAccount()
 int Disable::DisableAccount()
 {
     cout << "Account Disable" << endl;
-    currAccounts.DisableAccount(acc);
+    // currAccounts.DisableAccount(acc);
     return 1;
 }
 

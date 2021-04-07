@@ -1,10 +1,53 @@
 Run test  1/test_number
 ETF
 BTO
+22a23
+> Enter Account Plan:
+26,40d26
+< 
+< MAIN MENU (Admin Privileges ON)
+< ==============================
+< 1. Withdrawal
+< 2. Transfer
+< 3. Pay Bill
+< 4. Deposit
+< 5. Create
+< 6. Delete
+< 7. Disable
+< 8. Change Plan
+< 0. Logout
+< 
+< Enter Selection: 
+< Command not recognized
 
 Run test  2/test_number
 ETF
+1c1
+< 08 John Smith           12345 00000.00 NP
+---
+> 08 John Smith           12345 00000.00 SP
 BTO
+23c23,24
+< Set payment plan from student (SP) to non-student (NP)
+---
+> Enter Account Plan:
+> Set payment plan from non-student (NP) to student (SP)
+26,40d26
+< 
+< MAIN MENU (Admin Privileges ON)
+< ==============================
+< 1. Withdrawal
+< 2. Transfer
+< 3. Pay Bill
+< 4. Deposit
+< 5. Create
+< 6. Delete
+< 7. Disable
+< 8. Change Plan
+< 0. Logout
+< 
+< Enter Selection: 
+< Command not recognized
 
 Run test  3/test_number
 ETF

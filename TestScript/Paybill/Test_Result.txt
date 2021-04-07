@@ -1,30 +1,311 @@
 Run test  1
 ETF
+0a1
+> 03 Major Cream          54321 00010.50 CR
 BTO
+19c19
+< Acount Not Found
+---
+> Account Found!
+21,27c21,23
+< MAIN MENU
+< ===========
+< 1. Withdrawal
+< 2. Transfer
+< 3. Pay Bill
+< 4. Deposit
+< 0. Logout
+---
+> The Bright Light Electric Company (EC)
+> Credit Card Company Q (CQ)
+> Fast Internet, Inc. (FI)
+29,41c25,30
+< Enter Selection: 
+< Command not recognized
+< 
+< MAIN MENU
+< ===========
+< 1. Withdrawal
+< 2. Transfer
+< 3. Pay Bill
+< 4. Deposit
+< 0. Logout
+< 
+< Enter Selection: 
+< Command not recognized
+---
+> Enter the company shorthand you want to pay: 
+> Company Found!
+> Enter the ammount to be paid:
+> Account Updated
+> Payment Successful!
+> Receipt Saved!
 
 Run test  10
 ETF
 BTO
+19c19
+< Acount Not Found
+---
+> Account Found!
+21,27c21,23
+< MAIN MENU
+< ===========
+< 1. Withdrawal
+< 2. Transfer
+< 3. Pay Bill
+< 4. Deposit
+< 0. Logout
+---
+> The Bright Light Electric Company (EC)
+> Credit Card Company Q (CQ)
+> Fast Internet, Inc. (FI)
+29,41c25,28
+< Enter Selection: 
+< Command not recognized
+< 
+< MAIN MENU
+< ===========
+< 1. Withdrawal
+< 2. Transfer
+< 3. Pay Bill
+< 4. Deposit
+< 0. Logout
+< 
+< Enter Selection: 
+< Command not recognized
+---
+> Enter the company shorthand you want to pay: 
+> Company Found!
+> Enter the ammount to be paid:
+> Error: Value Error - cannot Paybill less than $0!
 
 Run test  11
 ETF
 BTO
+19c19
+< Acount Not Found
+---
+> Account Found!
+21,27c21,23
+< MAIN MENU
+< ===========
+< 1. Withdrawal
+< 2. Transfer
+< 3. Pay Bill
+< 4. Deposit
+< 0. Logout
+---
+> The Bright Light Electric Company (EC)
+> Credit Card Company Q (CQ)
+> Fast Internet, Inc. (FI)
+29,41c25,28
+< Enter Selection: 
+< Command not recognized
+< 
+< MAIN MENU
+< ===========
+< 1. Withdrawal
+< 2. Transfer
+< 3. Pay Bill
+< 4. Deposit
+< 0. Logout
+< 
+< Enter Selection: 
+< Command not recognized
+---
+> Enter the company shorthand you want to pay: 
+> Company Found!
+> Enter the ammount to be paid:
+> ERROR: Value Error - Paybill more than $2000!
 
 Run test  12
 ETF
+0a1
+> 03 Major Cream          54321 02001.00 CR
 BTO
+23c23
+< Acount Not Found
+---
+> Account Found!
+25,35c25,27
+< MAIN MENU (Admin Privileges ON)
+< ==============================
+< 1. Withdrawal
+< 2. Transfer
+< 3. Pay Bill
+< 4. Deposit
+< 5. Create
+< 6. Delete
+< 7. Disable
+< 8. Change Plan
+< 0. Logout
+---
+> The Bright Light Electric Company (EC)
+> Credit Card Company Q (CQ)
+> Fast Internet, Inc. (FI)
+37,53c29,34
+< Enter Selection: 
+< Command not recognized
+< 
+< MAIN MENU (Admin Privileges ON)
+< ==============================
+< 1. Withdrawal
+< 2. Transfer
+< 3. Pay Bill
+< 4. Deposit
+< 5. Create
+< 6. Delete
+< 7. Disable
+< 8. Change Plan
+< 0. Logout
+< 
+< Enter Selection: 
+< Command not recognized
+---
+> Enter the company shorthand you want to pay: 
+> Company Found!
+> Enter the ammount to be paid:
+> Account Updated
+> Payment Successful!
+> Receipt Saved!
 
 Run test  13
 ETF
+0a1
+> 03 Major Cream          54321 00010.50 CR
 BTO
+19c19
+< Acount Not Found
+---
+> Account Found!
+21,27c21,23
+< MAIN MENU
+< ===========
+< 1. Withdrawal
+< 2. Transfer
+< 3. Pay Bill
+< 4. Deposit
+< 0. Logout
+---
+> The Bright Light Electric Company (EC)
+> Credit Card Company Q (CQ)
+> Fast Internet, Inc. (FI)
+29,41c25,30
+< Enter Selection: 
+< Command not recognized
+< 
+< MAIN MENU
+< ===========
+< 1. Withdrawal
+< 2. Transfer
+< 3. Pay Bill
+< 4. Deposit
+< 0. Logout
+< 
+< Enter Selection: 
+< Command not recognized
+---
+> Enter the company shorthand you want to pay: 
+> Company Found!
+> Enter the ammount to be paid:
+> Account Updated
+> Payment Successful!
+> Receipt Saved!
 
 Run test  14
 ETF
+0a1
+> 03 Major Cream          54321 00010.50 CR
 BTO
+19c19
+< Acount Not Found
+---
+> Account Found!
+21,27c21,23
+< MAIN MENU
+< ===========
+< 1. Withdrawal
+< 2. Transfer
+< 3. Pay Bill
+< 4. Deposit
+< 0. Logout
+---
+> The Bright Light Electric Company (EC)
+> Credit Card Company Q (CQ)
+> Fast Internet, Inc. (FI)
+29,41c25,30
+< Enter Selection: 
+< Command not recognized
+< 
+< MAIN MENU
+< ===========
+< 1. Withdrawal
+< 2. Transfer
+< 3. Pay Bill
+< 4. Deposit
+< 0. Logout
+< 
+< Enter Selection: 
+< Command not recognized
+---
+> Enter the company shorthand you want to pay: 
+> Company Found!
+> Enter the ammount to be paid:
+> Account Updated
+> Payment Successful!
+> Receipt Saved!
 
 Run test  2
 ETF
+0a1
+> 03 Major Cream          54321 00010.50 CR
 BTO
+23c23
+< Acount Not Found
+---
+> Account Found!
+25,35c25,27
+< MAIN MENU (Admin Privileges ON)
+< ==============================
+< 1. Withdrawal
+< 2. Transfer
+< 3. Pay Bill
+< 4. Deposit
+< 5. Create
+< 6. Delete
+< 7. Disable
+< 8. Change Plan
+< 0. Logout
+---
+> The Bright Light Electric Company (EC)
+> Credit Card Company Q (CQ)
+> Fast Internet, Inc. (FI)
+37,53c29,34
+< Enter Selection: 
+< Command not recognized
+< 
+< MAIN MENU (Admin Privileges ON)
+< ==============================
+< 1. Withdrawal
+< 2. Transfer
+< 3. Pay Bill
+< 4. Deposit
+< 5. Create
+< 6. Delete
+< 7. Disable
+< 8. Change Plan
+< 0. Logout
+< 
+< Enter Selection: 
+< Command not recognized
+---
+> Enter the company shorthand you want to pay: 
+> Company Found!
+> Enter the ammount to be paid:
+> Account Updated
+> Payment Successful!
+> Receipt Saved!
 
 Run test  3
 ETF
@@ -32,7 +313,46 @@ BTO
 
 Run test  4
 ETF
+0a1
+> 03 Major Cream          54321 00010.50 CR
 BTO
+19c19
+< Acount Not Found
+---
+> Account Found!
+21,27c21,23
+< MAIN MENU
+< ===========
+< 1. Withdrawal
+< 2. Transfer
+< 3. Pay Bill
+< 4. Deposit
+< 0. Logout
+---
+> The Bright Light Electric Company (EC)
+> Credit Card Company Q (CQ)
+> Fast Internet, Inc. (FI)
+29,41c25,30
+< Enter Selection: 
+< Command not recognized
+< 
+< MAIN MENU
+< ===========
+< 1. Withdrawal
+< 2. Transfer
+< 3. Pay Bill
+< 4. Deposit
+< 0. Logout
+< 
+< Enter Selection: 
+< Command not recognized
+---
+> Enter the company shorthand you want to pay: 
+> Company Found!
+> Enter the ammount to be paid:
+> Account Updated
+> Payment Successful!
+> Receipt Saved!
 
 Run test  5
 ETF
@@ -48,9 +368,70 @@ BTO
 
 Run test  8
 ETF
+0a1
+> 03 Major Cream          54321 00010.50 CR
 BTO
+19c19
+< Acount Not Found
+---
+> Account Found!
+21,27c21,23
+< MAIN MENU
+< ===========
+< 1. Withdrawal
+< 2. Transfer
+< 3. Pay Bill
+< 4. Deposit
+< 0. Logout
+---
+> The Bright Light Electric Company (EC)
+> Credit Card Company Q (CQ)
+> Fast Internet, Inc. (FI)
+29,41c25,30
+< Enter Selection: 
+< Command not recognized
+< 
+< MAIN MENU
+< ===========
+< 1. Withdrawal
+< 2. Transfer
+< 3. Pay Bill
+< 4. Deposit
+< 0. Logout
+< 
+< Enter Selection: 
+< Command not recognized
+---
+> Enter the company shorthand you want to pay: 
+> Company Found!
+> Enter the ammount to be paid:
+> Account Updated
+> Payment Successful!
+> Receipt Saved!
 
 Run test  9
 ETF
 BTO
+19c19
+< Acount Not Found
+---
+> Account Found!
+21,27c21,23
+< MAIN MENU
+< ===========
+< 1. Withdrawal
+< 2. Transfer
+< 3. Pay Bill
+< 4. Deposit
+< 0. Logout
+---
+> The Bright Light Electric Company (EC)
+> Credit Card Company Q (CQ)
+> Fast Internet, Inc. (FI)
+29,30c25,26
+< Enter Selection: 
+< Command not recognized
+---
+> Enter the company shorthand you want to pay: 
+> Company Not Found
 

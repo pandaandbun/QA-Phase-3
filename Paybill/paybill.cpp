@@ -83,7 +83,7 @@ int Paybill::EnterAccountNumber()
             acc.accountStatus = currAccStatus;
             acc.accountBalance = currAccBal;
 
-            if (currAccStatus == "D")
+            if (currAccStatus == "D" || currAccStatus == "C")
             {
                 cout << "Account Disabled!" << endl;
                 return 0;
@@ -160,7 +160,7 @@ int Paybill::EnterAmount()
 int Paybill::UpdateAccount()
 {
     cout << "Account Updated" << endl;
-    currAccounts.UpdateAccount(acc);
+    // currAccounts.UpdateAccount(acc);
     return 1;
 }
 

@@ -1,6 +1,6 @@
 1/
 ETF Diff Check
-Files 1/Ran/transfer1.etf and 1/Expected/transfer1.etf are identical
+02 12345                56789 00001.00 CR		      |	02 John                 56789 00001.00 CR
 ETF Diff Check
 Files 1/Ran/transfer1.bto and 1/Expected/transfer1.bto are identical
 10/
@@ -20,22 +20,22 @@ ETF Diff Check
 Files 12/Ran/transfer12.bto and 12/Expected/transfer12.bto are identical
 13/
 ETF Diff Check
-Files 13/Ran/transfer13.etf and 13/Expected/transfer13.etf are identical
+02 12345                56789 01001.00 CR		      |	02 John                 56789 01001.00 CR
 ETF Diff Check
 Files 13/Ran/transfer13.bto and 13/Expected/transfer13.bto are identical
 14/
 ETF Diff Check
-Files 14/Ran/transfer14.etf and 14/Expected/transfer14.etf are identical
+02 12345                56789 00001.00 CR		      |	02 John                 56789 00001.00 CR
 ETF Diff Check
 Files 14/Ran/transfer14.bto and 14/Expected/transfer14.bto are identical
 15/
 ETF Diff Check
-Files 15/Ran/transfer15.etf and 15/Expected/transfer15.etf are identical
+02 12345                56789 00001.00 CR		      |	02 John                 56789 00001.00 CR
 ETF Diff Check
 Files 15/Ran/transfer15.bto and 15/Expected/transfer15.bto are identical
 2/
 ETF Diff Check
-Files 2/Ran/transfer2.etf and 2/Expected/transfer2.etf are identical
+02 12345                56789 00001.00 CR		      |	02 John                 56789 00001.00 CR
 ETF Diff Check
 Files 2/Ran/transfer2.bto and 2/Expected/transfer2.bto are identical
 3/
@@ -45,7 +45,7 @@ ETF Diff Check
 Files 3/Ran/transfer3.bto and 3/Expected/transfer3.bto are identical
 4/
 ETF Diff Check
-Files 4/Ran/transfer4.etf and 4/Expected/transfer4.etf are identical
+02 12345                56789 00001.00 CR		      |	02 John                 56789 00001.00 CR
 ETF Diff Check
 Files 4/Ran/transfer4.bto and 4/Expected/transfer4.bto are identical
 5/
@@ -55,7 +55,7 @@ ETF Diff Check
 Files 5/Ran/transfer5.bto and 5/Expected/transfer5.bto are identical
 6/
 ETF Diff Check
-Files 6/Ran/transfer6.etf and 6/Expected/transfer6.etf are identical
+02 12345                56789 00001.00 CR		      |	02 John                 56789 00001.00 CR
 ETF Diff Check
 Files 6/Ran/transfer6.bto and 6/Expected/transfer6.bto are identical
 7/

@@ -71,7 +71,7 @@ int Transfer::FromAccountNumber()
 
         if (fromAcc.accountNumber == currAccNum && currUser.userName == currAccName)
         {
-            if (currAccStatus == "D")
+            if (currAccStatus == "D" || currAccStatus == "C")
             {
                 cout << "Account Disabled!" << endl;
                 return 0;
@@ -112,7 +112,7 @@ int Transfer::ToAccountNumber()
 
         if (toAcc.accountNumber == currAccNum)
         {
-            if (currAccStatus == "D")
+            if (currAccStatus == "D" || currAccStatus == "C")
             {
                 cout << "Account Disabled!" << endl;
                 return 0;
@@ -167,9 +167,6 @@ int Transfer::EnterAmount()
 // Update both Frm Account and To Account
 void Transfer::UpdateAccount()
 {
-    currAccounts.UpdateAccount(fromAcc);
-    currAccounts.UpdateAccount(toAcc);
-
     cout << "Account Updated!" << endl;
 }
 
@@ -187,7 +184,8 @@ int Transfer::CheckAccountBalance()
 // Save Transaction
 Transaction Transfer::SaveTransaction()
 {
-    Transaction transaction(2, currUser.userName, fromAcc.accountNumber, transferAmount, "CR");
+    // Transaction transaction(2, currUser.userName, fromAcc.accountNumber, transferAmount, "CR");
+    Transaction transaction(2, to_string(toAcc.accountNumber), fromAcc.accountNumber, transferAmount, "CR");
 
     cout << "Receipt Saved!" << endl;
     return transaction;

@@ -106,7 +106,7 @@ int Create::CreateAccount()
 {
     cout << "Account Created" << endl;
     acc.accountStatus = "A";
-    currAccounts.CreateAccount(acc);
+    // currAccounts.CreateAccount(acc);
     return 1;
 }
 

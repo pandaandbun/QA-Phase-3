@@ -73,7 +73,7 @@ int Delete::CheckValidAccount()
 
         if (acc.accountNumber == currAccNum && acc.accountHolderName == currAccName)
         {
-            if (currAccounts.accounts[i].accountStatus == "D")
+            if (currAccounts.accounts[i].accountStatus == "D" || currAccounts.accounts[i].accountStatus == "C")
             {
                 cout << "Account Disabled!" << endl;
                 return 0;
@@ -104,7 +104,7 @@ int Delete::CheckValidBalance()
 int Delete::DeleteAccount()
 {
     cout << "Account Deleted" << endl;
-    currAccounts.DeleteAccount(acc);
+    // currAccounts.DeleteAccount(acc);
     return 1;
 }
 

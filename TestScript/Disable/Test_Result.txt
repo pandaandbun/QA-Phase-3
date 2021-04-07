@@ -25,4 +25,15 @@ BTO
 Run test  7
 ETF
 BTO
+42,49c42
+< Account Found!
+< 
+< The Bright Light Electric Company (EC)
+< Credit Card Company Q (CQ)
+< Fast Internet, Inc. (FI)
+< 
+< Enter the company shorthand you want to pay: 
+< Company Not Found
+---
+> Account Disabled!
 

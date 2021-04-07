@@ -73,7 +73,7 @@ int Deposit::EnterAccountNumber()
 
         if (acc.accountNumber == currAccNum && currUser.userName == currAccName)
         {
-            if (currAccStatus == "D")
+            if (currAccStatus == "D" || currAccStatus == "C")
             {
                 cout << "Account Disabled!" << endl;
                 return 0;
@@ -119,7 +119,7 @@ int Deposit::EnterAmount()
 int Deposit::UpdateAccount()
 {
     cout << "Account Updated" << endl;
-    currAccounts.UpdateAccount(acc);
+    // currAccounts.UpdateAccount(acc);
     return 1;
 }
 

@@ -68,7 +68,7 @@ int withdrawal::EnterAccountNumber()
 
         if (acc.accountNumber == currAccNum && currUser.userName == currAccName)
         {
-            if (currAccStatus == "D")
+            if (currAccStatus == "D" || currAccStatus == "C")
             {
                 cout << "Account Disabled!" << endl;
                 return 0;
@@ -121,7 +121,7 @@ int withdrawal::EnterAmount()
 int withdrawal::UpdateAccount()
 {
     cout << "Account Updated" << endl;
-    currAccounts.UpdateAccount(acc);
+    // currAccounts.UpdateAccount(acc);
     return 1;
 }
 

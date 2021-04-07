@@ -11,13 +11,11 @@ Transaction ChangePlan::RunChangePlan()
             {
                 if (CheckValidAccount())
                 {
-                    if (EnterAccountPlan())
+
+                    if (CheckValidPlan())
                     {
-                        if (CheckValidPlan())
-                        {
-                            ChangeAccount();
-                            return SaveTransaction();
-                        }
+                        ChangeAccount();
+                        return SaveTransaction();
                     }
                 }
             }
@@ -52,7 +50,7 @@ int ChangePlan::EnterAccountNumber()
     cin >> currUser.bankAccountNumber;
 
     // Check if account number is valid
-    if (currUser.isValidAccountNumber(currUser.bankAccountNumber)) 
+    if (currUser.isValidAccountNumber(currUser.bankAccountNumber))
     {
         acc.accountNumber = currUser.bankAccountNumber;
         return 1;
@@ -60,14 +58,6 @@ int ChangePlan::EnterAccountNumber()
 
     cout << "Account number is invalid" << endl;
     return 0;
-}
-
-// Enter account plan
-int ChangePlan::EnterAccountPlan()
-{
-    cout << "Enter Account Plan:" << endl;
-    cin >> acc.accountPlan;
-    return 1;
 }
 
 // Check if account is valid
@@ -80,12 +70,14 @@ int ChangePlan::CheckValidAccount()
 
         if (acc.accountNumber == currAccNum && acc.accountHolderName == currAccName)
         {
-            if (currAccounts.accounts[i].accountStatus == "D")
+            if (currAccounts.accounts[i].accountStatus == "D" || currAccounts.accounts[i].accountStatus == "C")
             {
                 cout << "Account Disabled!" << endl;
                 return 0;
             }
+
             cout << "Account Found!" << endl;
+            acc.accountPlan = currAccounts.accounts[i].accountPlan;
             return 1;
         }
     }
@@ -101,7 +93,7 @@ int ChangePlan::CheckValidPlan()
     {
         return 1;
     }
-    
+
     cout << "Plan not valid" << endl;
     return 0;
 }
@@ -109,11 +101,13 @@ int ChangePlan::CheckValidPlan()
 // TODO: Figure out where student plan is set
 int ChangePlan::ChangeAccount()
 {
-    if (acc.accountPlan == "SP"){
+    if (acc.accountPlan == "SP")
+    {
         cout << "Set payment plan from student (SP) to non-student (NP)" << endl;
         acc.accountPlan = "NP";
     }
-    else if (acc.accountPlan == "NP") {
+    else if (acc.accountPlan == "NP")
+    {
         cout << "Set payment plan from non-student (NP) to student (SP)" << endl;
         acc.accountPlan = "SP";
     }

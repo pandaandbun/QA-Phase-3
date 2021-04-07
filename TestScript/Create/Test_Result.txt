@@ -16,5 +16,9 @@ BTO
 
 Run test  5
 ETF
+1c1
+< 05 Gordon Smith         70008 01657.67 00
+---
+> 05 Gordon Smith         70009 01657.67 00
 BTO
 

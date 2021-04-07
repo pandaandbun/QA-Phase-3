@@ -16,14 +16,18 @@ MAIN MENU
 
 Enter Selection: 
 Enter your account number:
-Account Found!
+Acount Not Found
 
-The Bright Light Electric Company (EC)
-Credit Card Company Q (CQ)
-Fast Internet, Inc. (FI)
+MAIN MENU
+===========
+1. Withdrawal
+2. Transfer
+3. Pay Bill
+4. Deposit
+0. Logout
 
-Enter the company shorthand you want to pay: 
-Company Not Found
+Enter Selection: 
+Command not recognized
 
 MAIN MENU
 ===========
